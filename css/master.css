@@ -60,12 +60,12 @@ hr.line {
 
 #header-title
 {
-    grid-column: 1 / 8;
+    grid-column: 1 / 9;
 }
 
 #header-links
 {
-    grid-column: 8 / 13;
+    grid-column: 9 / 14;
     text-align: right;
 }
 
