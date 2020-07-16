@@ -1,0 +1,82 @@
+html
+{
+    font-family: HKGrotesk-Regular;
+}
+
+h1
+{
+    font-family: HKGrotesk-Bold;
+    font-size: 48px;
+    margin: 0;
+}
+
+p
+{
+    font-size: 48px;
+    margin: 0;
+}
+
+img
+{
+    display: block;
+    width: 100%;
+    margin-bottom: 2vh;
+}
+
+/*hr*/
+/*{*/
+/*    margin: 0;*/
+/*}*/
+
+hr.line {
+    display: block;
+    border-top: 3px solid #000000;
+    grid-column: 4 / 11;
+    margin-bottom: 4vh;
+}
+
+#wrapper
+{
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    /*grid-template-rows: 100px 100px;*/
+    grid-gap: 10px;
+    /*padding-top: 10vh;*/
+}
+
+#header, #projects, #project-header, #project-details, #bio, #footer
+{
+    /*display: block;*/
+    grid-column: 4 / 11;
+}
+
+#header, #project-header
+{
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    /*grid-template-rows: 100px 100px;*/
+    grid-gap: 10px;
+}
+
+#header-title
+{
+    grid-column: 1 / 8;
+}
+
+#header-links
+{
+    grid-column: 8 / 13;
+    text-align: right;
+}
+
+#header-title > h1, #header-links > h1
+{
+    display: inline;
+}
+
+/*projects*/
+
+.project-entry
+{
+    margin-bottom: 2vh;
+}
