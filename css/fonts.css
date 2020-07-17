@@ -21,3 +21,11 @@
     url('../fonts/HKGrotesk-Bold.woff') format('woff'),
     url('../fonts/HKGrotesk-Bold.ttf') format('truetype');
 }
+
+@font-face{
+    font-family: 'HKGrotesk-ExtraBold';
+    src: url('../fonts/HKGrotesk-ExtraBold.eot');
+    src: url('../fonts/HKGrotesk-ExtraBold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/HKGrotesk-ExtraBold.woff') format('woff'),
+    url('../fonts/HKGrotesk-ExtraBold.ttf') format('truetype');
+}
