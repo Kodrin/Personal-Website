@@ -93,6 +93,7 @@ hr.line {
 {
     font-family: HKGrotesk-Regular;
     display: inline;
+    font-size: 32px;
 }
 
 #header-title > h1
@@ -110,6 +111,7 @@ hr.line {
 {
     font-family: HKGrotesk-Regular;
     display: inline;
+    font-size: 32px;
 }
 
 /*projects*/
