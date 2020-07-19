@@ -131,9 +131,18 @@ hr.line {
     height: 21vh;
 }
 
-
+#project-details > h1
+{
+    margin-bottom: 2vh;
+}
 
 #project-details > p
 {
     font-size: 21px;
+    margin-bottom: 2vh;
+}
+
+#project-details > img, .vimeo
+{
+
 }
