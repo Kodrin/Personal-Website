@@ -64,7 +64,7 @@ hr.line {
     margin-bottom: 2.5vh;
 }
 
-#header, #projects, #project-header, #project-details, #bio, #footer
+#header, #projects, #project-header, #project-details, #bio, #footer, .project-entry
 {
     /*display: block;*/
     grid-column: 4 / 11;
@@ -118,7 +118,7 @@ hr.line {
 
 .project-entry
 {
-    grid-column: 4 / 11;
+    /* grid-column: 4 / 11; */
     /*margin-bottom: 2vh;*/
 }
 
