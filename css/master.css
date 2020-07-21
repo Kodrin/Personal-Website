@@ -64,6 +64,13 @@ hr.line {
     margin-bottom: 2.5vh;
 }
 
+.project-entry > a > img:hover
+{
+  opacity: 80%;
+  transition: 0.25s;
+}
+
+
 #header, #projects, #project-header, #project-details, #bio, #footer, .project-entry
 {
     /*display: block;*/
