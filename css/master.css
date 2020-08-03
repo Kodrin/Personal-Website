@@ -107,6 +107,7 @@ hr.line {
 {
     font-family: HKGrotesk-ExtraBold;
     display: inline;
+    line-height: 1.1;
 }
 
 #footer-links
@@ -122,12 +123,19 @@ hr.line {
 }
 
 /*projects*/
-
-.project-entry > h1 > a
+.project-entry > h1
 {
-    /* grid-column: 4 / 11; */
-    /*margin-bottom: 2vh;*/
+    display: inline;
+}
+
+.project-entry > h1 > a, .project-entry > p > a
+{
     text-decoration: none;
+}
+
+.project-entry > p
+{
+    display: inline;
 }
 
 .project-entry > a > img
