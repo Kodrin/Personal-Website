@@ -123,10 +123,11 @@ hr.line {
 
 /*projects*/
 
-.project-entry
+.project-entry > h1 > a
 {
     /* grid-column: 4 / 11; */
     /*margin-bottom: 2vh;*/
+    text-decoration: none;
 }
 
 .project-entry > a > img
