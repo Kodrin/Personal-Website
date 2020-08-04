@@ -111,6 +111,12 @@ hr.line {
     line-height: 1.1;
 }
 
+#bio > p
+{
+  line-height: 1.4;
+  margin-bottom: 2.5vh;
+}
+
 #footer-links
 {
     grid-column: 1 / 6;
