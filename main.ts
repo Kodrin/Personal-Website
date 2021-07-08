@@ -13,16 +13,9 @@ const PAGES_PATH : string = __dirname + "/pages/"
 const OUTPUT_PATH : string = __dirname + "/output/"
 const MARKDOWN_PATH : string = __dirname + "/md/"
 
-// const html : string = template.HTML()
-// fs.writeFileSync(OUTPUT_PATH + "output.html", html)
 
-//get all files in directory
-// const files = io.GetFilesPathInDir(PAGES_PATH)
-// debug.LogList(files)
-
-// const text = fs.readFileSync(PAGES_PATH + "something.txt")
-// console.log(text)
-
+//For storing out project
+let projectsList : ProjectStruct[] = []
 
 interface ProjectStruct
 {
@@ -31,6 +24,7 @@ interface ProjectStruct
     date : string,
     month : string,
     year : string,
+    markdownContent : string
 
 }
 
@@ -49,7 +43,62 @@ if(false)
 }
 
 
-if(RUN_MAIN)
+//
+if(true)
+{
+    const projectPaths = io.GetFilesPathInDir(PAGES_PATH)
+
+    //for each project markdown you find
+    for (let i = 0; i < projectPaths.length; i++) 
+    {
+        
+        //read them
+        fs.readFile(projectPaths[i], 'utf8', function(err, markdown) 
+        {
+            //error handling
+            if (err) throw err;
+
+            //convert md to html
+            const projectDetails = MarkdownToHTML(markdown)
+            
+            //file naming
+            const basename : string = path.basename(projectPaths[i])
+            const fileName : string = basename.split('.').slice(0, -1).join('.')
+            
+            //meta information
+            const projectName : string = fileName.slice(5)
+            const date : string = fileName.slice(0,4)
+            const month : string = fileName.slice(0,2)
+            const year : string = fileName.slice(2,4)
+
+            //encapsulates data into struct
+            const project : ProjectStruct =
+            {
+                markdownPath : projectPaths[i],
+                name : projectName,
+                date : date,
+                month : month,
+                year : year,
+                markdownContent : markdown
+            }
+
+            //push into array
+            projectsList.push(project)
+
+            //debug the meta data
+            console.log(`Poject name : ${project.name} || date is : ${project.date}, month is ${project.month}, year is ${project.year}`);
+            // console.log(project);
+             
+        });
+    }
+    //NEED TO USE PROMISES!
+
+    // console.log(projectsList.length);
+    
+}
+
+
+if(false)
 {
 
     //INDEX HTML
