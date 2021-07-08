@@ -1,0 +1,173 @@
+html
+{
+    font-family: HKGrotesk-Regular;
+    background-color: #eeeeee;
+}
+
+body > *
+{
+    color: #2f2f36;
+}
+
+h1
+{
+    font-family: HKGrotesk-Bold;
+    font-size: 42px;
+    margin: 0;
+    line-height: 1.5;
+}
+
+p
+{
+    font-size: 42px;
+    margin: 0;
+}
+
+img
+{
+    display: block;
+    width: 100%;
+    margin-bottom: 2vh;
+}
+
+a, a:visited
+{
+    color: #2f2f36;
+}
+
+a:hover {
+    color: #88889c;
+    transition: 0.25s;
+}
+
+/*hr*/
+/*{*/
+/*    margin: 0;*/
+/*}*/
+
+
+#wrapper
+{
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    /*grid-template-rows: 100px 100px;*/
+    grid-gap: 10px;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+
+hr.line {
+    /*display: block;*/
+    border-top: 2px solid #2f2f36;
+    grid-column: 4 / 11;
+    width: 100%;
+    margin-bottom: 2.5vh;
+}
+
+.project-entry > a > img:hover
+{
+  opacity: 80%;
+  transition: 0.25s;
+}
+
+
+#header, #projects, #project-header, #project-details, #bio, #footer, .project-entry
+{
+    /*display: block;*/
+    grid-column: 4 / 11;
+}
+
+
+#header, #project-header, #footer
+{
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    /*grid-template-rows: 100px 100px;*/
+    grid-gap: 10px;
+}
+
+#header-title
+{
+    grid-column: 1 / 9;
+}
+
+#header-links
+{
+    grid-column: 9 / 14;
+    text-align: right;
+}
+
+#header-links > h1
+{
+    font-family: HKGrotesk-Regular;
+    display: inline;
+    font-size: 32px;
+}
+
+#header-title > h1
+{
+    font-family: HKGrotesk-ExtraBold;
+    display: inline;
+    line-height: 1.1;
+}
+
+#bio > p
+{
+  line-height: 1.4;
+  margin-bottom: 2.5vh;
+}
+
+#footer-links
+{
+    grid-column: 1 / 6;
+}
+
+#footer-links > h1
+{
+    font-family: HKGrotesk-Regular;
+    display: inline;
+    font-size: 32px;
+}
+
+/*projects*/
+.project-entry > h1
+{
+    display: inline;
+}
+
+.project-entry > h1 > a, .project-entry > p > a
+{
+    text-decoration: none;
+}
+
+.project-entry > p
+{
+    display: inline;
+}
+
+.project-entry > a > img
+{
+    display: block;
+    width: 100%;
+    margin-bottom: 2vh;
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+    height: 21vh;
+}
+
+#project-details > h1
+{
+    margin-bottom: 2vh;
+}
+
+#project-details > p
+{
+    font-size: 21px;
+    margin-bottom: 2vh;
+}
+
+#project-details > img, .vimeo
+{
+
+}

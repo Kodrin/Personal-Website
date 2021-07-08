@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "@types/node": "^16.0.0"
+  },
+  "scripts": {
+    "start": "tsc main.ts && node main.js"
+  },
+  "dependencies": {
+    "@ts-stack/markdown": "^1.4.0"
+  }
+}
