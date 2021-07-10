@@ -21,89 +21,117 @@ if (false) {
     var toHTML = markdown_1.Marked.parse(markdown);
     console.log(toHTML);
 }
-//
-if (true) {
-    var projectPaths_1 = io.GetFilesPathInDir(PAGES_PATH);
-    var _loop_1 = function (i) {
-        //read them
-        fs.readFile(projectPaths_1[i], 'utf8', function (err, markdown) {
-            //error handling
-            if (err)
-                throw err;
-            //convert md to html
-            var projectDetails = MarkdownToHTML(markdown);
-            //file naming
-            var basename = path.basename(projectPaths_1[i]);
-            var fileName = basename.split('.').slice(0, -1).join('.');
-            //meta information
-            var projectName = fileName.slice(5);
-            var date = fileName.slice(0, 4);
-            var month = fileName.slice(0, 2);
-            var year = fileName.slice(2, 4);
-            //encapsulates data into struct
-            var project = {
-                markdownPath: projectPaths_1[i],
-                name: projectName,
-                date: date,
-                month: month,
-                year: year,
-                markdownContent: markdown
-            };
-            //push into array
-            projectsList.push(project);
-            //debug the meta data
-            console.log("Poject name : " + project.name + " || date is : " + project.date + ", month is " + project.month + ", year is " + project.year);
-            // console.log(project);
-        });
-    };
-    //for each project markdown you find
-    for (var i = 0; i < projectPaths_1.length; i++) {
-        _loop_1(i);
+// let promise = new Promise(function(resolve, reject)
+// {
+//     // setTimeout(() => resolve("done!"), 1000);
+//     FetchProjectsAndStore()
+//     setTimeout(() => {
+//         ":: FETCHING PROJECTS..."
+//     }, 1000);
+//     if(projectsList.length > 0)
+//     {
+//         resolve("done!")
+//     }
+//     else
+//     {
+//         reject("The promise is rejected")
+//     }
+// })
+// promise.then(res => {
+//     console.log("Resolved with then!");
+// }).catch( err => {
+// })
+//PROGRAMS
+console.log(":: FETCHING PROJECTS...");
+FetchProjectsAndStore();
+setTimeout(function () {
+    console.log(":: FINISHED FETCHING PROJECTS...");
+    GenerateIndex();
+    GenerateAbout();
+    GenerateProjects();
+}, 1000);
+//GET PROPJECTS AND STORE THEM TO THE LIST
+function FetchProjectsAndStore() {
+    if (true) {
+        var projectPaths_1 = io.GetFilesPathInDir(PAGES_PATH);
+        var _loop_1 = function (i) {
+            //read them
+            fs.readFile(projectPaths_1[i], 'utf8', function (err, markdown) {
+                //error handling
+                if (err)
+                    throw err;
+                //convert md to html
+                var html = MarkdownToHTML(markdown);
+                //file naming
+                var basename = path.basename(projectPaths_1[i]);
+                var fileName = basename.split('.').slice(0, -1).join('.');
+                //meta information
+                var projectName = fileName.slice(5);
+                var date = fileName.slice(0, 4);
+                var month = fileName.slice(0, 2);
+                var year = fileName.slice(2, 4);
+                //encapsulates data into struct
+                var project = {
+                    markdownPath: projectPaths_1[i],
+                    name: projectName,
+                    date: date,
+                    month: month,
+                    year: year,
+                    markdownContent: markdown,
+                    htmlContent: html
+                };
+                //push into array
+                projectsList.push(project);
+                //debug the meta data
+                console.log("Poject name : " + project.name + " || date is : " + project.date + ", month is " + project.month + ", year is " + project.year);
+                // console.log(project);
+                // console.log(projectsList.length);
+            });
+        };
+        //for each project markdown you find
+        for (var i = 0; i < projectPaths_1.length; i++) {
+            _loop_1(i);
+        }
+        //NEED TO USE PROMISES! or callbacks
     }
-    console.log(projectsList.length);
+    //wait a bit 
+    // setTimeout(() => {
+    //     GenerateIndex()
+    //     // console.log(projectsList.length);
+    // }, 2000);
 }
-if (false) {
+function GenerateIndex() {
     //INDEX HTML
-    //get all paths for markdown project files 
-    var projectPaths_2 = io.GetFilesPathInDir(PAGES_PATH);
-    var projects = io.GetFilesPathInDir(PAGES_PATH);
     //crop the path and extension
-    for (var i = 0; i < projects.length; i++) {
-        var element = projects[i];
-        var basename = path.basename(projects[i]);
-        var name_1 = basename.split('.').slice(0, -1).join('.');
-        projects[i] = name_1;
-    }
+    // for (let i = 0; i < projectsList.length; i++) 
+    // {
+    //     const p = projectsList[i];
+    //     const basename : string = path.basename(projectsList[i])
+    //     const name : string = basename.split('.').slice(0, -1).join('.')
+    //     projectsList[i] = name
+    // }
     //write the index html
-    fs.writeFileSync(OUTPUT_PATH + "index.html", template.IndexHTML(projects));
-    var _loop_2 = function (i) {
-        //read them
-        fs.readFile(projectPaths_2[i], 'utf8', function (err, markdown) {
-            if (err)
-                throw err;
-            //convert md to html
-            var projectDetails = MarkdownToHTML(markdown);
-            //file naming
-            var basename = path.basename(projectPaths_2[i]);
-            var fileName = basename.split('.').slice(0, -1).join('.');
-            //meta information
-            var projectName = fileName.slice(5);
-            var date = fileName.slice(0, 4);
-            var month = fileName.slice(0, 2);
-            var year = fileName.slice(2, 4);
-            // create project html with data 
-            var html = template.ProjectHTML(month, year, projectName, projectDetails);
-            //debug the meta data
-            console.log("Poject name : " + projectName + " || date is : " + date + ", month is " + month + ", year is " + year);
-            //write html to output
-            fs.writeFileSync(OUTPUT_PATH + (fileName + ".html"), html);
-        });
-    };
-    //PROJECTS HTML
-    //for each project markdown you find
-    for (var i = 0; i < projectPaths_2.length; i++) {
-        _loop_2(i);
-    }
+    fs.writeFileSync(OUTPUT_PATH + "index.html", template.IndexHTML(projectsList));
+    console.log(":: GENERATED INDEX.HTML");
+}
+function GenerateAbout() {
     //ABOUT HTML
     fs.writeFileSync(OUTPUT_PATH + "about.html", template.AboutHTML());
+}
+function GenerateProjects() {
+    // console.log(projectsList.length);
+    //PROJECTS HTML
+    //get all paths for markdown project files 
+    // const projectPaths = io.GetFilesPathInDir(PAGES_PATH)
+    //for each project markdown you find
+    for (var i = 0; i < projectsList.length; i++) {
+        //project
+        var project = projectsList[i];
+        // create project html with data 
+        var html = template.ProjectHTML(project);
+        //debug the meta data
+        console.log("Poject name : " + project.name + " || date is : " + project.date + ", month is " + project.month + ", year is " + project.year);
+        //write html to output
+        fs.writeFileSync(OUTPUT_PATH + (project.name + ".html"), html);
+    }
 }

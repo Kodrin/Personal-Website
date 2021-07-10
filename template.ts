@@ -1,8 +1,11 @@
 //TEMPLATES
 import * as common from './common_template'
-import * as index from './index_template'
-import * as project from './project_template'
-import * as about from './about_template'
+import * as index_template from './index_template'
+import * as project_template from './project_template'
+import * as about_template from './about_template'
+
+import { IProjectStruct } from './data_structures'
+
 
 //CONSTANTS
 const META : string = "";
@@ -13,24 +16,24 @@ const FOOTER : string = "";
 const MEDIA : string = "";
 
 
-export function IndexHTML(projects : string[]) : string 
+export function IndexHTML(projects : IProjectStruct[]) : string 
 {
     return `
     <!DOCTYPE html>
     <html lang="en">
     ${common.Header()}
-    ${index.Body(projects)}
+    ${index_template.Body(projects)}
     </html>
     `
 }
 
-export function ProjectHTML(month : string, year : string, projectName : string, projectDetails : string) : string
+export function ProjectHTML(project : IProjectStruct) : string
 {
     return `
     <!DOCTYPE html>
     <html lang="en">
     ${common.Header()}
-    ${project.Body(month, year, projectName, projectDetails)}
+    ${project_template.Body(project)}
     </html>
     `
 }
@@ -41,7 +44,7 @@ export function AboutHTML() : string
     <!DOCTYPE html>
     <html lang="en">
     ${common.Header()}
-    ${about.Body()}
+    ${about_template.Body()}
     </html>
     `
 }
