@@ -2,9 +2,9 @@
 exports.__esModule = true;
 exports.AboutHTML = exports.ProjectHTML = exports.IndexHTML = void 0;
 //TEMPLATES
-var common = require("./common_template");
-var index_template = require("./index_template");
-var project_template = require("./project_template");
+var common = require("./template_common");
+var index_template = require("./template_index");
+var project_template = require("./template_project");
 var about_template = require("./about_template");
 //CONSTANTS
 var META = "";

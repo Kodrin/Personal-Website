@@ -1,7 +1,7 @@
 "use strict";
 exports.__esModule = true;
 exports.Body = exports.ProjectHTML = void 0;
-var common = require("./common_template");
+var common = require("./template_common");
 function ProjectHTML(project) {
     return "\n    <!DOCTYPE html>\n    <html lang=\"en\">\n    " + common.Header() + "\n    " + Body(project) + "\n    </html>\n    ";
 }

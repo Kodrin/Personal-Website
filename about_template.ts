@@ -1,4 +1,4 @@
-import * as common from './common_template'
+import * as common from './template_common'
 
 
 export function Body() : string

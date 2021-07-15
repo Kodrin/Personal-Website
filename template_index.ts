@@ -1,4 +1,4 @@
-import * as common from './common_template'
+import * as common from './template_common'
 import { IProjectStruct } from './data_structures'
 
 
@@ -15,9 +15,8 @@ export function Body(projects : IProjectStruct[]) : string
 
             <div id="header-links">
                 <h1><a href="index.html">Projects</a>  </h1>
-                <h1><a href="http://releases.codrinmihail.com/">Releases</a>  </h1><br>
                 <h1><a href="about.html">About</a>  </h1>
-                <h1><a href="http://www.miha-co.ca/lumograph">Photography</a>  </h1>
+                <h1><a href="https://lumograph.codrinmihail.com/">Photography</a>  </h1>
             </div>
             </section>
 
