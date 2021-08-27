@@ -2,7 +2,7 @@
 import * as common from './template_common'
 import * as index_template from './template_index'
 import * as project_template from './template_project'
-import * as about_template from './about_template'
+import * as about_template from './template_about'
 
 import { IProjectStruct } from './data_structures'
 

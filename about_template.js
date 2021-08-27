@@ -1,8 +1,0 @@
-"use strict";
-exports.__esModule = true;
-exports.Body = void 0;
-var common = require("./template_common");
-function Body() {
-    return "\n    <body>\n    <div id=\"wrapper\">\n        <section id=\"header\">\n            <div id=\"header-title\">\n                <h1>Codrin-Mihail<br>Interactive Dev. / Tech Art.</h1>\n            </div>\n\n            <div id=\"header-links\">\n                <h1><a href=\"index.html\">Projects</a>  </h1>\n                <h1><a href=\"http://releases.codrinmihail.com/\">Releases</a>  </h1><br>\n                <h1><a href=\"about.html\">About</a>  </h1>\n                <h1><a href=\"http://www.miha-co.ca/lumograph\">Photography</a>  </h1>\n            </div>\n        </section>\n\n        <!--divider-->\n        <hr class=\"line\">\n\n        <section id=\"bio\">\n            <p>\n                Software Engineer currently working on interactive installations for digital museums. Aside from building interactivity, a big part of my job is also being a technical artist developing developing real-time graphics through shader code. This is why I make <a href=\"http://releases.codrinmihail.com/\"><strong>Plugins/Releases</strong></a> on a monthly basis in the hopes of making it easier for people to understand the nuances of graphics programming. Everything on there is released open-source. Oh! And I do love to shoot <a href=\"http://www.miha-co.ca/lumograph\"><strong>Photos</strong></a> on film with my Olympus OM-10 that I bought for 60$.\n            </p>\n        </section>\n\n        <!--divider-->\n        <hr class=\"line\">\n\n        " + common.Footer() + "\n    </div>\n    </body>\n    ";
-}
-exports.Body = Body;

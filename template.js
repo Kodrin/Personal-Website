@@ -5,7 +5,7 @@ exports.AboutHTML = exports.ProjectHTML = exports.IndexHTML = void 0;
 var common = require("./template_common");
 var index_template = require("./template_index");
 var project_template = require("./template_project");
-var about_template = require("./about_template");
+var about_template = require("./template_about");
 //CONSTANTS
 var META = "";
 var TITLE = "Codrin-Mihail";
