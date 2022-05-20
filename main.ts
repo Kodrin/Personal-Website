@@ -72,6 +72,34 @@ setTimeout(() => {
 }, 1000)
 
 
+function CompareDates(a : IProjectStruct, b : IProjectStruct)
+{
+    //sort by year
+    if(a.year < b.year)
+    {
+        return 1;
+    }
+    if(a.year > b.year)
+    {
+        return -1;
+    }
+
+    //if year is the same, use the month
+    if(a.year == b.year)
+    {
+        if(a.month < b.month)
+        {
+            return 1;
+        }
+        if(a.month > b.month)
+        {
+            return -1;
+        }
+    }
+
+    return 0;
+}
+
 //GET PROPJECTS AND STORE THEM TO THE LIST
 function FetchProjectsAndStore()
 {
@@ -130,6 +158,7 @@ function FetchProjectsAndStore()
         
     }
 
+
     //wait a bit 
     // setTimeout(() => {
     //     GenerateIndex()
@@ -141,7 +170,8 @@ function FetchProjectsAndStore()
 
 function GenerateIndex()
 {
-
+    //re-arrange project according to date
+    projectsList.sort(CompareDates);
     //INDEX HTML
 
 
@@ -178,6 +208,7 @@ function GenerateProjects()
     //get all paths for markdown project files 
     // const projectPaths = io.GetFilesPathInDir(PAGES_PATH)
     
+
     //for each project markdown you find
     for (let i = 0; i < projectsList.length; i++) 
     {

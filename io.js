@@ -39,14 +39,14 @@ exports.GetFilesPathInDir = GetFilesPathInDir;
 // }
 function RenameFile(dir, file, newName) {
     var ext = GetFileExtension(dir + file);
-    fs.renameSync(dir + file, dir + (newName + "." + ext));
+    fs.renameSync(dir + file, dir + "".concat(newName, ".").concat(ext));
 }
 exports.RenameFile = RenameFile;
 //renaming files according to name and increment them 
 function RenameFilesIncrement(dir, files, newName) {
     for (var index = 0; index < files.length; index++) {
         var ext = GetFileExtension(dir + files[index]);
-        fs.renameSync(dir + files[index], dir + (newName + "_" + index + "." + ext));
+        fs.renameSync(dir + files[index], dir + "".concat(newName, "_").concat(index, ".").concat(ext));
     }
 }
 exports.RenameFilesIncrement = RenameFilesIncrement;

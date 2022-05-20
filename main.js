@@ -50,6 +50,25 @@ setTimeout(function () {
     GenerateAbout();
     GenerateProjects();
 }, 1000);
+function CompareDates(a, b) {
+    //sort by year
+    if (a.year < b.year) {
+        return 1;
+    }
+    if (a.year > b.year) {
+        return -1;
+    }
+    //if year is the same, use the month
+    if (a.year == b.year) {
+        if (a.month < b.month) {
+            return 1;
+        }
+        if (a.month > b.month) {
+            return -1;
+        }
+    }
+    return 0;
+}
 //GET PROPJECTS AND STORE THEM TO THE LIST
 function FetchProjectsAndStore() {
     if (true) {
@@ -83,7 +102,7 @@ function FetchProjectsAndStore() {
                 //push into array
                 projectsList.push(project);
                 //debug the meta data
-                console.log("Poject name : " + project.name + " || date is : " + project.date + ", month is " + project.month + ", year is " + project.year);
+                console.log("Poject name : ".concat(project.name, " || date is : ").concat(project.date, ", month is ").concat(project.month, ", year is ").concat(project.year));
                 // console.log(project);
                 // console.log(projectsList.length);
             });
@@ -101,6 +120,8 @@ function FetchProjectsAndStore() {
     // }, 2000);
 }
 function GenerateIndex() {
+    //re-arrange project according to date
+    projectsList.sort(CompareDates);
     //INDEX HTML
     //crop the path and extension
     // for (let i = 0; i < projectsList.length; i++) 
@@ -130,8 +151,8 @@ function GenerateProjects() {
         // create project html with data 
         var html = template.ProjectHTML(project);
         //debug the meta data
-        console.log("Poject name : " + project.name + " || date is : " + project.date + ", month is " + project.month + ", year is " + project.year);
+        console.log("Poject name : ".concat(project.name, " || date is : ").concat(project.date, ", month is ").concat(project.month, ", year is ").concat(project.year));
         //write html to output
-        fs.writeFileSync(OUTPUT_PATH + (project.name + ".html"), html);
+        fs.writeFileSync(OUTPUT_PATH + "".concat(project.name, ".html"), html);
     }
 }
