@@ -1,4 +1,3 @@
-![Bio-Sim](media/Bio-Sim/0.jpg)
 ![Bio-Sim](media/Bio-Sim/1.jpg)
 ![Bio-Sim](media/Bio-Sim/2.jpg)
 ![Bio-Sim](media/Bio-Sim/3.jpg)

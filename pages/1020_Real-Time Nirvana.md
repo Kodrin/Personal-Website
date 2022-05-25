@@ -5,6 +5,7 @@
 ![Nirvana](media/Real-Time Nirvana/4.jpg)
 ![Nirvana](media/Real-Time Nirvana/5.jpg)
 ![Nirvana](media/Real-Time Nirvana/6.jpg)
+![Nirvana](media/Real-Time Nirvana/7.jpg)
 
 # Collaborators
 
