@@ -1,3 +1,7 @@
+<video controls>
+  <source src="media/Bio-Sim/final.mp4" type="video/mp4">
+</video>
+
 ![Bio-Sim](media/Bio-Sim/1.jpg)
 ![Bio-Sim](media/Bio-Sim/2.jpg)
 ![Bio-Sim](media/Bio-Sim/3.jpg)
@@ -13,8 +17,3 @@
 ![Bio-Sim](media/Bio-Sim/13.jpg)
 ![Bio-Sim](media/Bio-Sim/14.jpg)
 ![Bio-Sim](media/Bio-Sim/15.jpg)
-
-# Collaborators
-
-
-# Process
