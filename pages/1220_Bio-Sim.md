@@ -1,6 +1,7 @@
-<video controls>
-  <source src="media/Bio-Sim/final.mp4" type="video/mp4">
-</video>
+
+<div class="videoWrapper">
+<iframe src="media/Bio-Sim/final.mp4" frameborder="0" allowfullscreen></iframe>
+</div>
 
 ![Bio-Sim](media/Bio-Sim/1.jpg)
 ![Bio-Sim](media/Bio-Sim/2.jpg)
