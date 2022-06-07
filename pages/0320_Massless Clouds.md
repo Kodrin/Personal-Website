@@ -18,15 +18,18 @@ The site of the work was in Macau. Before arrival, the contruction crew had set 
 <hr class="line">
 
 # Projection
-<video controls>
-  <source src="media/Massless Clouds/v1.mp4" type="video/mp4">
-</video>
-<video controls>
-  <source src="media/Massless Clouds/v2.mp4" type="video/mp4">
-</video>
-<video controls>
-  <source src="media/Massless Clouds/v3.mp4" type="video/mp4">
-</video>
+
+<div class="videoWrapper">
+<iframe src="media/Massless Clouds/v1.mp4" frameborder="0" allowfullscreen></iframe>
+</div>
+<div class="videoWrapper">
+<iframe src="media/Massless Clouds/v2.mp4" frameborder="0" allowfullscreen></iframe>
+</div>
+<div class="videoWrapper">
+<iframe src="media/Massless Clouds/v3.mp4" frameborder="0" allowfullscreen></iframe>
+</div>
+
+
 <!-- ![Massless Clouds](media/Massless Clouds/v1.mp4)
 ![Massless Clouds](media/Massless Clouds/v2.mp4)
 ![Massless Clouds](media/Massless Clouds/v3.mp4) -->
@@ -45,7 +48,7 @@ The site of the work was in Macau. Before arrival, the contruction crew had set 
 ![Massless Clouds](media/Massless Clouds/v2.gif)
 ![Massless Clouds](media/Massless Clouds/v3.gif)
 ![Massless Clouds](media/Massless Clouds/v4.gif)
-![Massless Clouds](media/Massless Clouds/v5.gif)
+<!-- ![Massless Clouds](media/Massless Clouds/v5.gif) -->
 
 
 <!-- <img src="media/masslessclouds/4.gif">

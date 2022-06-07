@@ -39,7 +39,3 @@
 <div class="videoWrapper">
 <iframe src="media/TeamLab Firefly Engine/o3.mp4" frameborder="0" allowfullscreen></iframe>
 </div>
-
-<div class="videoWrapper">
-<iframe src="media/TeamLab Firefly Engine/o4.mp4" frameborder="0" allowfullscreen></iframe>
-</div>

@@ -16,5 +16,5 @@
 ![Bio-Sim](media/Bio-Sim/11.jpg)
 ![Bio-Sim](media/Bio-Sim/12.jpg)
 ![Bio-Sim](media/Bio-Sim/13.jpg)
-![Bio-Sim](media/Bio-Sim/14.jpg)
+<!-- ![Bio-Sim](media/Bio-Sim/14.jpg) -->
 ![Bio-Sim](media/Bio-Sim/15.jpg)
