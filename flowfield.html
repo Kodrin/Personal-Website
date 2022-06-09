@@ -1,72 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Codrin-Mihail</title>
 
-    <!--    css stylesheets-->
-    <link rel="stylesheet" type="text/css" href= "css/fonts.css" >
-    <link rel="stylesheet" type="text/css" href= "css/master.css" >
-    <link rel="stylesheet" type="text/css" href= "css/mediaqueries.css" >
-</head>
-<body>
-<div id="wrapper">
+    <!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <title>Codrin-Mihail</title>
 
+        <!--    css stylesheets-->
+        <link rel="stylesheet" type="text/css" href= "css/fonts.css" >
+        <link rel="stylesheet" type="text/css" href= "css/master.css" >
+        <link rel="stylesheet" type="text/css" href= "css/mediaqueries.css" >
+    </head>
+    
+    
+    <body>
+    <div id="wrapper">
 
-    <section id="project-header">
-        <div id="header-title">
-            <h1>10/19 Flowfield</h1>
-        </div>
+        <section id="project-header">
+            <div id="header-title">
+                <h1>10/19 Flowfield</h1>
+            </div>
 
-        <div id="header-links">
-            <h1><a href="index.html">Projects</a></h1>
-        </div>
-    </section>
+            <div id="header-links">
+                <h1><a href="index.html">Projects</a></h1>
+            </div>
+        </section>
 
-    <hr class="line">
+        <hr class="line">
+    
+        <section id="project-details">
+        <p><img src="media/flowfield/1.gif" alt="FlowField"></p>
+<h1 id="visual-exploration">Visual exploration</h1>
+<p><strong>Flowfield</strong> is a visual research project constructed with shaders in the VFX graph (Unity) as a way to explore to dynamic real-time graphics. The particles flow through a field that is changing according to a depth texture.</p>
+<p><img src="media/flowfield/2.gif" alt="FlowField">
+<img src="media/flowfield/3.gif" alt="FlowField">
+<img src="media/flowfield/4.gif" alt="FlowField"></p>
+<h1 id="adding-physics">Adding physics</h1>
+<p>Over the course of several iterations, I started to implement variations with forces. In addition to the depth texture, there would be random wind forces that would affect the particles in a more natural way. Suddenly, I started thinking in terms of attraction and repulsion as a way to mold the outcome of the shaders.</p>
+<p><img src="media/flowfield/5.gif" alt="FlowField">
+<img src="media/flowfield/6.gif" alt="FlowField"></p>
+<h1 id="stamping">Stamping</h1>
+<p>I quickly realized that you could create some cool stamping effects by controlling the intensity of particle attractions and the way they spawn according to the depth texture.</p>
+<p><img src="media/flowfield/7.gif" alt="FlowField"></p>
+<h1 id="smoothing-the-attraction">Smoothing the attraction</h1>
+<p>I was always attracted to the idea of emerging patterns in the systems that we create. The idea that your artwork will, unknowingly to you, shift it&#39;s appearance over time by tweaking certain parameters and letting it do it&#39;s thing. This is a good example of a river-like pattern that emerged as I was reducing the attraction factor on the depth texture.</p>
+<p><img src="media/flowfield/8.gif" alt="FlowField"></p>
+<h1 id="adding-the-third-dimension">Adding the third dimension</h1>
+<p>Up until this point, I was strictly working in 2D to simplify the prototyping process but I eventually ported the shaders to 3D and started to imagine the flowfield in a 3D grid instead.</p>
+<p><img src="media/flowfield/9.gif" alt="FlowField">
+<img src="media/flowfield/10.gif" alt="FlowField"></p>
+<h1 id="color-and-flow">Color and Flow</h1>
+<p>The visuals were pretty linear. So, I needed to improve and re-iterate on them by creating relationships between the depth texture, the density, the speed and color of the particles. This resulted in a nice looking flowfield that emulated the flow of fire in stylistic way!</p>
 
-    <section id="project-details">
-      <img src="media/flowfield/1.gif">
-      <h1>Visual exploration</h1>
-      <p>
-        <strong>Flowfield</strong> is a visual research project constructed with shaders in the VFX graph (Unity) as a way to explore to dynamic real-time graphics. The particles flow through a field that is changing according to a depth texture.
-      </p>
+        </section>
+        
+        <!--divider-->
+        <hr class="line">
 
-      <img src="media/flowfield/2.gif">
-      <img src="media/flowfield/3.gif">
-      <img src="media/flowfield/4.gif">
-      <h1>Adding physics</h1>
-      <p>
-        Over the course of several iterations, I started to implement variations with forces. In addition to the depth texture, there would be random wind forces that would affect the particles in a more natural way. Suddenly, I started thinking in terms of attraction and repulsion as a way to mold the outcome of the shaders.
-      </p>
-      <img src="media/flowfield/5.gif">
-      <img src="media/flowfield/6.gif">
-      <h1>Stamping</h1>
-      <p>
-        I quickly realized that you could create some cool stamping effects by controlling the intensity of particle attractions and the way they spawn according to the depth texture.
-      </p>
-      <img src="media/flowfield/7.gif">
-      <h1>Smoothing the attraction</h1>
-      <p>
-        I was always attracted to the idea of emerging patterns in the systems that we create. The idea that your artwork will, unknowingly to you, shift it's appearance over time by tweaking certain parameters and letting it do it's thing. This is a good example of a river-like pattern that emerged as I was reducing the attraction factor on the depth texture.
-      </p>
-      <img src="media/flowfield/8.gif">
-      <h1>Adding the third dimension</h1>
-      <p>
-        Up until this point, I was strictly working in 2D to simplify the prototyping process but I eventually ported the shaders to 3D and started to imagine the flowfield in a 3D grid instead.
-      </p>
-      <img src="media/flowfield/9.gif">
-      <img src="media/flowfield/10.gif">
-      <h1>Color and Flow</h1>
-      <p>
-        The visuals were pretty linear. So, I needed to improve and re-iterate on them by creating relationships between the depth texture, the density, the speed and color of the particles. This resulted in a nice looking flowfield that emulated the flow of fire in stylistic way!
-      </p>
-
-    </section>
-
-    <!--divider-->
-    <hr class="line">
-
+        
     <section id="footer">
         <div id="footer-links">
             <h1><a href="https://github.com/Kodrin">GitHub</a>  </h1>
@@ -74,6 +65,10 @@
             <h1><a href="https://twitter.com/CodrinMihail">Twitter</a></h1>
         </div>
     </section>
-</div>
-</body>
-</html>
+    
+
+    </div>
+    </body>
+    
+    </html>
+    
