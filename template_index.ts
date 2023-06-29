@@ -41,6 +41,28 @@ export function ProjectLists(projects : IProjectStruct[]) : string
     return body
 }
 
+export function ProjectTags(project : IProjectStruct) : string
+{
+    let body = ""
+    const tags : string[] = project.tags
+    for (let i = 0; i < tags.length; i++) 
+    {
+        body += ProjectTagSlide(tags[i])
+    }
+
+    return body
+}
+
+export function ProjectTagSlide(tag : string) : string
+{
+    return `
+    <div class="project-tag">
+        <p>${tag}</p>
+    </div>
+
+    <!--divider-->
+    `
+}
 
 export function ProjectSlide(project : IProjectStruct) : string 
 {
@@ -48,6 +70,7 @@ export function ProjectSlide(project : IProjectStruct) : string
     <div class="project-entry">
         <a href="${project.name}.html"><img src="media/${project.name}/thumbnail.jpg"></a>
         <h1><a href="${project.name}.html">${project.month}/${project.year}</a></h1><p><a href="${project.name}.html"> ${project.name}</a></p>
+        ${ProjectTags(project)}
     </div>
 
     <!--divider-->

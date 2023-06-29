@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProjectStruct = void 0;
 var ProjectStruct = /** @class */ (function () {
     function ProjectStruct() {

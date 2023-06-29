@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.Body = exports.ProjectHTML = void 0;
 var common = require("./template_common");
 function ProjectHTML(project) {

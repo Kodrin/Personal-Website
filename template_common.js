@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.Footer = exports.Header = void 0;
 function Header() {
     return "\n    <head>\n        <meta charset=\"UTF-8\">\n        <title>Codrin-Mihail</title>\n\n        <!--    css stylesheets-->\n        <link rel=\"stylesheet\" type=\"text/css\" href= \"css/fonts.css\" >\n        <link rel=\"stylesheet\" type=\"text/css\" href= \"css/master.css\" >\n        <link rel=\"stylesheet\" type=\"text/css\" href= \"css/mediaqueries.css\" >\n    </head>\n    ";

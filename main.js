@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 var fs = require("fs");
 var path = require("path");
 var template = require("./template");
@@ -89,6 +89,7 @@ function FetchProjectsAndStore() {
                 var date = fileName.slice(0, 4);
                 var month = fileName.slice(0, 2);
                 var year = fileName.slice(2, 4);
+                var tags = new Array("Interactive", "Procedural", "Shaders", "Unity", "Unreal");
                 //encapsulates data into struct
                 var project = {
                     markdownPath: projectPaths_1[i],
@@ -97,7 +98,8 @@ function FetchProjectsAndStore() {
                     month: month,
                     year: year,
                     markdownContent: markdown,
-                    htmlContent: html
+                    htmlContent: html,
+                    tags: tags
                 };
                 //push into array
                 projectsList.push(project);

@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 exports.GetFileExtension = exports.RenameFilesIncrement = exports.RenameFile = exports.GetFilesPathInDir = void 0;
 //libraries and utilities
 var fs = require("fs");

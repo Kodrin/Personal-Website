@@ -130,6 +130,7 @@ function FetchProjectsAndStore()
                 const date : string = fileName.slice(0,4)
                 const month : string = fileName.slice(0,2)
                 const year : string = fileName.slice(2,4)
+                const tags : string[] = new Array("Interactive", "Procedural", "Shaders", "Unity", "Unreal")
 
                 //encapsulates data into struct
                 const project : IProjectStruct =
@@ -140,7 +141,8 @@ function FetchProjectsAndStore()
                     month : month,
                     year : year,
                     markdownContent : markdown,
-                    htmlContent : html
+                    htmlContent : html,
+                    tags : tags
                 }
 
                 //push into array
