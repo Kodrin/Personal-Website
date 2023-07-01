@@ -186,6 +186,11 @@ hr.line
     display: inline-block;
 }
 
+.project-info
+{
+    margin-bottom: 2vh;
+}
+
 /* project tags */
 .project-tags
 {
