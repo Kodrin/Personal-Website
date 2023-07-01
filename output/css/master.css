@@ -186,6 +186,11 @@ hr.line
     display: inline-block;
 }
 
+.project-name > p
+{
+    margin-left: 10px;
+}
+
 .project-info
 {
     margin-bottom: 2vh;
@@ -195,7 +200,7 @@ hr.line
 .project-tags
 {
     display: block;
-    margin-left: auto;
+    /* margin-left: auto; */
     /* grid-column: 7 / 11; */
 }
 
@@ -220,6 +225,7 @@ hr.line
 
 }
 
+/* project pages */
 #project-details > h1
 {
     margin-bottom: 2vh;

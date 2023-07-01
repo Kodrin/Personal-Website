@@ -23,8 +23,10 @@ export function Body() : string
 
         <section id="bio">
             <p>
-            I am a Software Developer & Technical Artist with 4 years of experience in the interactive media and games industry. My work has always been about bridging the gap between art and code. I have a solid background in graphics programming leveraging the DirectX API to develop real-time simulations and shaders for projects. I am also proficient in tools development, often leveraging code to create procedural assets or facilitate pipelines. This skillset has put me in a unique position to contribute as a technical artist as well by handling various shader-related, real-time VFX and procedural generation tasks (through code and Houdini). As such, I have a solid understanding of the 3D pipeline and am able to communicate easily with both artists and programmers.
+
+            Welcome! I'm a tech artist with expertise in AAA game development. I specialize in building artist tools and procedural systems in Unreal Engine and Unity. With a solid grasp of Houdini and pipeline establishment, I streamline workflows for optimal efficiency. My understanding of graphics programming and shaders enhances visual quality. Having worked in the interactive media industry, I bring a unique perspective. Proficient in C# and C++, I bridge art and technology, delivering exceptional results. Let's collaborate to bring your creative vision to life! Contact me to discuss your next project.
             </p>
+            
         </section>
 
         <!--divider-->
