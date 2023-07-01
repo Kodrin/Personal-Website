@@ -7,6 +7,7 @@ var io = require("./io");
 var markdown_1 = require("@ts-stack/markdown");
 //CONSTANTS
 var RUN_MAIN = true;
+var META_PATH = __dirname + "/meta/";
 var PAGES_PATH = __dirname + "/pages/";
 var OUTPUT_PATH = __dirname + "/output/";
 var MARKDOWN_PATH = __dirname + "/md/";
@@ -20,6 +21,12 @@ if (false) {
     var markdown = fs.readFileSync(MARKDOWN_PATH + "sample.md", 'utf8');
     var toHTML = markdown_1.Marked.parse(markdown);
     console.log(toHTML);
+}
+if (true) {
+    // read the meta file
+    var siteDataString = fs.readFileSync(META_PATH + "site_data.json", 'utf-8');
+    var siteData = JSON.parse(siteDataString);
+    console.log(siteData.projects[0].title);
 }
 // let promise = new Promise(function(resolve, reject)
 // {

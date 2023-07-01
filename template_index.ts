@@ -72,8 +72,7 @@ export function ProjectSlide(project : IProjectStruct) : string
         <div class="project-info-tab">
             <div class="project-info">
                 <div class="project-name">
-                    <h1><a href="${project.name}.html">${project.month}/${project.year}</a></h1>
-                    <p><a href="${project.name}.html">   ${project.name}</a></p>
+                    <p><a href="${project.name}.html">${project.name}</a></p>
                 </div>
 
                 <div class="project-tags">
@@ -87,3 +86,5 @@ export function ProjectSlide(project : IProjectStruct) : string
     <hr class="line">
     `
 }
+
+// <h1><a href="${project.name}.html">${project.month}/${project.year}</a></h1>

@@ -6,10 +6,12 @@ import * as debug from './debug'
 
 import { IProjectStruct } from './data_structures'
 import { Marked } from '@ts-stack/markdown'
+import { log } from 'console'
 
 //CONSTANTS
 const RUN_MAIN : boolean = true
 
+const META_PATH : string = __dirname + "/meta/"
 const PAGES_PATH : string = __dirname + "/pages/"
 const OUTPUT_PATH : string = __dirname + "/output/"
 const MARKDOWN_PATH : string = __dirname + "/md/"
@@ -31,6 +33,15 @@ if(false)
     const toHTML = Marked.parse(markdown)
     console.log(toHTML);
     
+}
+
+if(true)
+{
+    // read the meta file
+    const siteDataString = fs.readFileSync(META_PATH + "site_data.json", 'utf-8')
+    const siteData = JSON.parse(siteDataString)
+
+    // console.log(siteData.projects[0].title)
 }
 
 // let promise = new Promise(function(resolve, reject)

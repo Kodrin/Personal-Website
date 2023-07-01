@@ -3,33 +3,76 @@
 
 
     "projects" : [
+
         {
-            "title" : "",
-            "date" : "",
-            "markdown" : "",
+            "display" : true,
+            "priority" : 0,
+            "title" : "LFCEEA 200HZ",
+            "date" : "0122",
+            "markdown" : "0122_LFCEEA 200HZ.md",
             "tags" : [
-                {
-                    
-                }
+                "Installation",
+                "Unity",
+                "Shaders",
+                "VFX"
             ]
         },
+
         {
-            "title" : "",
-            "date" : "",
+            "display" : true,
+            "priority" : 10,
+            "title" : "Monolight Oasis",
+            "date" : "1221",
+            "markdown" : "1221_Monolight Oasis.md",
             "tags" : [
-                {
-                    
-                }
+                "Audio-Reactive",
+                "Unity",
+                "Shaders",
+                "VFX"
             ]
         },
+
         {
-            "title" : "",
-            "date" : "",
+            "display" : true,
+            "priority" : 20,
+            "title" : "LFCEEA 200HZ",
+            "date" : "0122",
+            "markdown" : "0122_LFCEEA 200HZ.md",
             "tags" : [
-                {
-                    
-                }
+                "Installation",
+                "Unity",
+                "Shaders",
+                "VFX"
+            ]
+        },
+
+        {
+            "display" : true,
+            "priority" : 30,
+            "title" : "LFCEEA 200HZ",
+            "date" : "0122",
+            "markdown" : "0122_LFCEEA 200HZ.md",
+            "tags" : [
+                "Installation",
+                "Unity",
+                "Shaders",
+                "VFX"
+            ]
+        },
+
+        {
+            "display" : true,
+            "priority" : 40,
+            "title" : "LFCEEA 200HZ",
+            "date" : "0122",
+            "markdown" : "0122_LFCEEA 200HZ.md",
+            "tags" : [
+                "Installation",
+                "Unity",
+                "Shaders",
+                "VFX"
             ]
         }
+
     ]
 }
