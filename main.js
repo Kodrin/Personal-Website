@@ -24,9 +24,9 @@ if (false) {
 }
 if (true) {
     // read the meta file
-    var siteDataString = fs.readFileSync(META_PATH + "site_data.json", 'utf-8');
-    var siteData = JSON.parse(siteDataString);
-    console.log(siteData.projects[0].title);
+    // const siteDataString = fs.readFileSync(META_PATH + "site_data.json", 'utf-8')
+    // const siteData = JSON.parse(siteDataString)
+    // console.log(siteData.projects[0].title)
 }
 // let promise = new Promise(function(resolve, reject)
 // {
@@ -78,7 +78,7 @@ function CompareDates(a, b) {
 }
 //GET PROPJECTS AND STORE THEM TO THE LIST
 function FetchProjectsAndStore() {
-    if (true) {
+    if (false) {
         var projectPaths_1 = io.GetFilesPathInDir(PAGES_PATH);
         var _loop_1 = function (i) {
             //read them
@@ -121,6 +121,39 @@ function FetchProjectsAndStore() {
             _loop_1(i);
         }
         //NEED TO USE PROMISES! or callbacks
+    }
+    if (true) {
+        var siteDataString = fs.readFileSync(META_PATH + "site_data.json", 'utf-8');
+        var siteData = JSON.parse(siteDataString);
+        for (var i = 0; i < siteData.projects.length; i++) {
+            var p = siteData.projects[i];
+            //convert md to html
+            // const html = MarkdownToHTML(markdown)
+            //file naming
+            // const basename : string = path.basename(projectPaths[i])
+            // const fileName : string = basename.split('.').slice(0, -1).join('.')
+            // //meta information
+            // const projectName : string = fileName.slice(5)
+            // const date : string = fileName.slice(0,4)
+            // const month : string = fileName.slice(0,2)
+            // const year : string = fileName.slice(2,4)
+            // const tags : string[] = new Array("Interactive", "Procedural", "Shaders", "Unity", "Unreal")
+            //encapsulates data into struct
+            var project = {
+                markdownPath: "",
+                name: p.title,
+                date: p.date,
+                month: "0",
+                year: "0",
+                markdownContent: "",
+                htmlContent: "",
+                tags: p.tags
+            };
+            //push into array
+            projectsList.push(project);
+            //debug the meta data
+            console.log("Poject name : ".concat(project.name, " || date is : ").concat(project.date, ", month is ").concat(project.month, ", year is ").concat(project.year));
+        }
     }
     //wait a bit 
     // setTimeout(() => {

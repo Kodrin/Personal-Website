@@ -1,5 +1,14 @@
 {
-    "bio" : "",
+    "about" : {
+        "bio" : "",
+
+        "links" : {
+            "photography" : "",
+            "github" : "",
+            "linkedin" : "",
+            "twitter" : ""
+        }
+    },
 
 
     "projects" : [
