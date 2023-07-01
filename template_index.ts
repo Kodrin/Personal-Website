@@ -69,8 +69,17 @@ export function ProjectSlide(project : IProjectStruct) : string
     return `
     <div class="project-entry">
         <a href="${project.name}.html"><img src="media/${project.name}/thumbnail.jpg"></a>
-        <h1><a href="${project.name}.html">${project.month}/${project.year}</a></h1><p><a href="${project.name}.html"> ${project.name}</a></p>
-        ${ProjectTags(project)}
+        <div class="project-info-tab">
+            <div class="project-info">
+                <div class="project-name">
+                    <h1><a href="${project.name}.html">${project.month}/${project.year}</a></h1><p><a href="${project.name}.html"> ${project.name}</a></p>
+                </div>
+
+                <div class="project-tags">
+                    ${ProjectTags(project)}
+                </div>
+            </div>
+        </div>
     </div>
 
     <!--divider-->

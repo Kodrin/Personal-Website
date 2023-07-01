@@ -71,7 +71,7 @@ hr.line {
 }
 
 
-#header, #projects, #project-header, #project-details, #bio, #footer, .project-entry
+#header, #projects, #project-header, #project-details, #bio, #footer, .project-entry, .project-info
 {
     /*display: block;*/
     grid-column: 4 / 11;
@@ -154,6 +154,11 @@ hr.line {
     background-size: cover;
     background-position: center;
     height: 21vh;
+}
+
+.project-tag > p
+{
+    font-size: 18px;
 }
 
 #project-details > h1

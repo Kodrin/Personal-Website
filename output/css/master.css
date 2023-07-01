@@ -55,7 +55,8 @@ a, a:visited
     color: #2f2f36;
 }
 
-a:hover {
+a:hover 
+{
     color: #88889c;
     transition: 0.25s;
 }
@@ -76,7 +77,8 @@ a:hover {
     padding-bottom: 5vh;
 }
 
-hr.line {
+hr.line 
+{
     /*display: block;*/
     border-top: 2px solid #2f2f36;
     grid-column: 4 / 11;
@@ -155,7 +157,8 @@ hr.line {
     display: inline;
 }
 
-.project-entry > h1 > a, .project-entry > p > a
+/* no underscore for the link */
+.project-name > h1 > a, .project-name > p > a
 {
     text-decoration: none;
 }
@@ -165,6 +168,7 @@ hr.line {
     display: inline;
 }
 
+/* project image cover */
 .project-entry > a > img
 {
     display: block;
@@ -174,6 +178,41 @@ hr.line {
     background-size: cover;
     background-position: center;
     height: 21vh;
+}
+
+/* get them all to display in 1 line */
+.project-name > h1, .project-name > p, .project-info, .project-name, .project-tags, .project-tag
+{
+    display: inline-block;
+}
+
+/* project tags */
+.project-tags
+{
+    display: block;
+    margin-left: auto;
+    /* grid-column: 7 / 11; */
+}
+
+.project-tag
+{
+    border-radius: 5px;
+    background: #2f2f36;
+    padding: 4px; 
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.project-tag > p
+{
+    display: inline;
+    color: #eeeeee;
+}
+
+.project-tag > p
+{
+    font-size: 16px;
+
 }
 
 #project-details > h1
