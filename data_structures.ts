@@ -109,39 +109,6 @@ export class SiteMetaData
     }
 }
 
-export class ProjectStruct
-{
-    public display : boolean
-    public priority : number
-    public markdownPath : string
-    public name : string
-    public date : string
-    public markdownContent : string
-    public htmlContent : string
-    public tags : string[]
-
-    constructor()
-    {
-
-    }
-
-    public GetMonth() : number
-    {
-        return 0
-    }
-
-    public GetYear() : number
-    {
-        return 0
-    }
-
-    public GetHTML(markdown : string) : string
-    {
-        return Marked.parse(markdown)
-    }
-
-}
-
 
 export function SortProjectsByPriority(a : ProjectData, b : ProjectData)
 {

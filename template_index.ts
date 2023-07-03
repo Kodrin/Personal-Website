@@ -1,8 +1,8 @@
 import * as common from './template_common'
-import { ProjectStruct } from './data_structures'
+import { ProjectData } from './data_structures'
 
 
-export function Body(projects : ProjectStruct[]) : string 
+export function Body(projects : ProjectData[]) : string 
 {
     return `
     <body>
@@ -30,7 +30,7 @@ export function Body(projects : ProjectStruct[]) : string
     `
 }
 
-export function ProjectLists(projects : ProjectStruct[]) : string 
+export function ProjectLists(projects : ProjectData[]) : string 
 {
     let body = ""
     for (let i = 0; i < projects.length; i++) 
@@ -41,7 +41,7 @@ export function ProjectLists(projects : ProjectStruct[]) : string
     return body
 }
 
-export function ProjectTags(project : ProjectStruct) : string
+export function ProjectTags(project : ProjectData) : string
 {
     let body = ""
     const tags : string[] = project.tags
@@ -64,15 +64,15 @@ export function ProjectTagSlide(tag : string) : string
     `
 }
 
-export function ProjectSlide(project : ProjectStruct) : string 
+export function ProjectSlide(project : ProjectData) : string 
 {
     return `
     <div class="project-entry">
-        <a href="${project.name}.html"><img src="media/${project.name}/thumbnail.jpg"></a>
+        <a href="${project.title}.html"><img src="media/${project.title}/thumbnail.jpg"></a>
         <div class="project-info-tab">
             <div class="project-info">
                 <div class="project-name">
-                    <p><a href="${project.name}.html">${project.name}</a></p>
+                    <p><a href="${project.title}.html">${project.title}</a></p>
                 </div>
 
                 <div class="project-tags">

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SortProjectsByDate = exports.SortProjectsByPriority = exports.ProjectStruct = exports.SiteMetaData = exports.ProjectData = exports.AboutPageData = void 0;
+exports.SortProjectsByDate = exports.SortProjectsByPriority = exports.SiteMetaData = exports.ProjectData = exports.AboutPageData = void 0;
 var fs = require("fs");
 var global = require("./global");
 var markdown_1 = require("@ts-stack/markdown");
@@ -60,21 +60,6 @@ var SiteMetaData = /** @class */ (function () {
     return SiteMetaData;
 }());
 exports.SiteMetaData = SiteMetaData;
-var ProjectStruct = /** @class */ (function () {
-    function ProjectStruct() {
-    }
-    ProjectStruct.prototype.GetMonth = function () {
-        return 0;
-    };
-    ProjectStruct.prototype.GetYear = function () {
-        return 0;
-    };
-    ProjectStruct.prototype.GetHTML = function (markdown) {
-        return markdown_1.Marked.parse(markdown);
-    };
-    return ProjectStruct;
-}());
-exports.ProjectStruct = ProjectStruct;
 function SortProjectsByPriority(a, b) {
     //sort by year
     if (a.year < b.year) {

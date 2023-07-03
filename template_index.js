@@ -28,7 +28,7 @@ function ProjectTagSlide(tag) {
 }
 exports.ProjectTagSlide = ProjectTagSlide;
 function ProjectSlide(project) {
-    return "\n    <div class=\"project-entry\">\n        <a href=\"".concat(project.name, ".html\"><img src=\"media/").concat(project.name, "/thumbnail.jpg\"></a>\n        <div class=\"project-info-tab\">\n            <div class=\"project-info\">\n                <div class=\"project-name\">\n                    <p><a href=\"").concat(project.name, ".html\">").concat(project.name, "</a></p>\n                </div>\n\n                <div class=\"project-tags\">\n                    ").concat(ProjectTags(project), "\n                </div>\n            </div>\n        </div>\n    </div>\n\n    <!--divider-->\n    <hr class=\"line\">\n    ");
+    return "\n    <div class=\"project-entry\">\n        <a href=\"".concat(project.title, ".html\"><img src=\"media/").concat(project.title, "/thumbnail.jpg\"></a>\n        <div class=\"project-info-tab\">\n            <div class=\"project-info\">\n                <div class=\"project-name\">\n                    <p><a href=\"").concat(project.title, ".html\">").concat(project.title, "</a></p>\n                </div>\n\n                <div class=\"project-tags\">\n                    ").concat(ProjectTags(project), "\n                </div>\n            </div>\n        </div>\n    </div>\n\n    <!--divider-->\n    <hr class=\"line\">\n    ");
 }
 exports.ProjectSlide = ProjectSlide;
 // <h1><a href="${project.name}.html">${project.month}/${project.year}</a></h1>

@@ -1,8 +1,8 @@
 import * as common from './template_common'
-import { ProjectStruct } from './data_structures'
+import { ProjectData } from './data_structures'
 
 
-export function ProjectHTML(project : ProjectStruct) : string
+export function ProjectHTML(project : ProjectData) : string
 {
     return `
     <!DOCTYPE html>
@@ -13,7 +13,7 @@ export function ProjectHTML(project : ProjectStruct) : string
     `
 }
 
-export function Body(project : ProjectStruct) : string 
+export function Body(project : ProjectData) : string 
 {
     return `
     <body>
@@ -21,7 +21,7 @@ export function Body(project : ProjectStruct) : string
 
         <section id="project-header">
             <div id="header-title">
-                <h1>${project.name}</h1>
+                <h1>${project.title}</h1>
             </div>
 
             <div id="header-links">
@@ -32,7 +32,7 @@ export function Body(project : ProjectStruct) : string
         <hr class="line">
     
         <section id="project-details">
-        ${project.htmlContent}
+        ${project.html}
         </section>
         
         <!--divider-->

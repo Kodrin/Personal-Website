@@ -4,7 +4,7 @@ import * as index_template from './template_index'
 import * as project_template from './template_project'
 import * as about_template from './template_about'
 
-import { ProjectStruct } from './data_structures'
+import { ProjectData } from './data_structures'
 
 
 //CONSTANTS
@@ -16,7 +16,7 @@ const FOOTER : string = "";
 const MEDIA : string = "";
 
 
-export function IndexHTML(projects : ProjectStruct[]) : string 
+export function IndexHTML(projects : ProjectData[]) : string 
 {
     return `
     <!DOCTYPE html>
@@ -27,7 +27,7 @@ export function IndexHTML(projects : ProjectStruct[]) : string
     `
 }
 
-export function ProjectHTML(project : ProjectStruct) : string
+export function ProjectHTML(project : ProjectData) : string
 {
     return `
     <!DOCTYPE html>
