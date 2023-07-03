@@ -4,6 +4,7 @@ var fs = require("fs");
 var path = require("path");
 var template = require("./template");
 var io = require("./io");
+var data_structures_1 = require("./data_structures");
 var markdown_1 = require("@ts-stack/markdown");
 //CONSTANTS
 var RUN_MAIN = true;
@@ -12,6 +13,7 @@ var PAGES_PATH = __dirname + "/pages/";
 var OUTPUT_PATH = __dirname + "/output/";
 var MARKDOWN_PATH = __dirname + "/md/";
 //For storing out project
+var projectsMetaData = [];
 var projectsList = [];
 function MarkdownToHTML(markdown) {
     return markdown_1.Marked.parse(markdown);
@@ -22,11 +24,21 @@ if (false) {
     var toHTML = markdown_1.Marked.parse(markdown);
     console.log(toHTML);
 }
+// importing the json meta data
 if (true) {
     // read the meta file
-    // const siteDataString = fs.readFileSync(META_PATH + "site_data.json", 'utf-8')
-    // const siteData = JSON.parse(siteDataString)
-    // console.log(siteData.projects[0].title)
+    var siteDataString = fs.readFileSync(META_PATH + "site_data.json", 'utf-8');
+    var siteData = JSON.parse(siteDataString);
+    var aboutJsonData = siteData.about;
+    var projectsJsonData = siteData.projects;
+    for (var index in projectsJsonData) {
+        var project = projectsJsonData[index];
+        projectsMetaData.push(new data_structures_1.ProjectData(project.display, project.priority, project.title, project.date, project.markdownPath, project.tags));
+        // console.log(projectsJsonData[index].title);
+    }
+    for (var index in projectsMetaData) {
+        console.log(projectsMetaData[index].priority);
+    }
 }
 // let promise = new Promise(function(resolve, reject)
 // {
@@ -57,25 +69,31 @@ setTimeout(function () {
     GenerateAbout();
     GenerateProjects();
 }, 1000);
-function CompareDates(a, b) {
-    //sort by year
-    if (a.year < b.year) {
-        return 1;
-    }
-    if (a.year > b.year) {
-        return -1;
-    }
-    //if year is the same, use the month
-    if (a.year == b.year) {
-        if (a.month < b.month) {
-            return 1;
-        }
-        if (a.month > b.month) {
-            return -1;
-        }
-    }
-    return 0;
-}
+// function CompareDates(a : ProjectStruct, b : ProjectStruct)
+// {
+//     //sort by year
+//     if(a.year < b.year)
+//     {
+//         return 1;
+//     }
+//     if(a.year > b.year)
+//     {
+//         return -1;
+//     }
+//     //if year is the same, use the month
+//     if(a.year == b.year)
+//     {
+//         if(a.month < b.month)
+//         {
+//             return 1;
+//         }
+//         if(a.month > b.month)
+//         {
+//             return -1;
+//         }
+//     }
+//     return 0;
+// }
 //GET PROPJECTS AND STORE THEM TO THE LIST
 function FetchProjectsAndStore() {
     if (false) {
@@ -98,20 +116,21 @@ function FetchProjectsAndStore() {
                 var year = fileName.slice(2, 4);
                 var tags = new Array("Interactive", "Procedural", "Shaders", "Unity", "Unreal");
                 //encapsulates data into struct
-                var project = {
-                    markdownPath: projectPaths_1[i],
-                    name: projectName,
-                    date: date,
-                    month: month,
-                    year: year,
-                    markdownContent: markdown,
-                    htmlContent: html,
-                    tags: tags
-                };
+                // const project : ProjectStruct =
+                // {
+                //     markdownPath : projectPaths[i],
+                //     name : projectName,
+                //     date : date,
+                //     month : month,
+                //     year : year,
+                //     markdownContent : markdown,
+                //     htmlContent : html,
+                //     tags : tags
+                // }
                 //push into array
-                projectsList.push(project);
+                // projectsList.push(project)
                 //debug the meta data
-                console.log("Poject name : ".concat(project.name, " || date is : ").concat(project.date, ", month is ").concat(project.month, ", year is ").concat(project.year));
+                // console.log(`Poject name : ${project.name} || date is : ${project.date}, month is ${project.month}, year is ${project.year}`);
                 // console.log(project);
                 // console.log(projectsList.length);
             });
@@ -139,20 +158,21 @@ function FetchProjectsAndStore() {
             // const year : string = fileName.slice(2,4)
             // const tags : string[] = new Array("Interactive", "Procedural", "Shaders", "Unity", "Unreal")
             //encapsulates data into struct
-            var project = {
-                markdownPath: "",
-                name: p.title,
-                date: p.date,
-                month: "0",
-                year: "0",
-                markdownContent: "",
-                htmlContent: "",
-                tags: p.tags
-            };
+            // const project : ProjectStruct =
+            // {
+            //     markdownPath : "",
+            //     name : p.title,
+            //     date : p.date,
+            //     month : "0",
+            //     year : "0",
+            //     markdownContent : "",
+            //     htmlContent : "",
+            //     tags : p.tags
+            // }
             //push into array
-            projectsList.push(project);
+            // projectsList.push(project)
             //debug the meta data
-            console.log("Poject name : ".concat(project.name, " || date is : ").concat(project.date, ", month is ").concat(project.month, ", year is ").concat(project.year));
+            // console.log(`Poject name : ${project.name} || date is : ${project.date}, month is ${project.month}, year is ${project.year}`);
         }
     }
     //wait a bit 
@@ -163,7 +183,7 @@ function FetchProjectsAndStore() {
 }
 function GenerateIndex() {
     //re-arrange project according to date
-    projectsList.sort(CompareDates);
+    // projectsList.sort(CompareDates);
     //INDEX HTML
     //crop the path and extension
     // for (let i = 0; i < projectsList.length; i++) 
@@ -193,7 +213,7 @@ function GenerateProjects() {
         // create project html with data 
         var html = template.ProjectHTML(project);
         //debug the meta data
-        console.log("Poject name : ".concat(project.name, " || date is : ").concat(project.date, ", month is ").concat(project.month, ", year is ").concat(project.year));
+        // console.log(`Poject name : ${project.name} || date is : ${project.date}, month is ${project.month}, year is ${project.year}`);
         //write html to output
         fs.writeFileSync(OUTPUT_PATH + "".concat(project.name, ".html"), html);
     }

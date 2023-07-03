@@ -1,8 +1,8 @@
 import * as common from './template_common'
-import { IProjectStruct } from './data_structures'
+import { ProjectStruct } from './data_structures'
 
 
-export function ProjectHTML(project : IProjectStruct) : string
+export function ProjectHTML(project : ProjectStruct) : string
 {
     return `
     <!DOCTYPE html>
@@ -13,7 +13,7 @@ export function ProjectHTML(project : IProjectStruct) : string
     `
 }
 
-export function Body(project : IProjectStruct) : string 
+export function Body(project : ProjectStruct) : string 
 {
     return `
     <body>
@@ -21,7 +21,7 @@ export function Body(project : IProjectStruct) : string
 
         <section id="project-header">
             <div id="header-title">
-                <h1>${project.month}/${project.year} ${project.name}</h1>
+                <h1>${project.name}</h1>
             </div>
 
             <div id="header-links">

@@ -4,7 +4,7 @@ import * as template from './template'
 import * as io from './io'
 import * as debug from './debug'
 
-import { IProjectStruct } from './data_structures'
+import { ProjectData, ProjectStruct } from './data_structures'
 import { Marked } from '@ts-stack/markdown'
 import { log } from 'console'
 
@@ -18,7 +18,8 @@ const MARKDOWN_PATH : string = __dirname + "/md/"
 
 
 //For storing out project
-let projectsList : IProjectStruct[] = []
+let projectsMetaData : ProjectData[] = []
+let projectsList : ProjectStruct[] = []
 
 
 function MarkdownToHTML(markdown : string) : string
@@ -35,13 +36,38 @@ if(false)
     
 }
 
+// importing the json meta data
 if(true)
 {
     // read the meta file
-    // const siteDataString = fs.readFileSync(META_PATH + "site_data.json", 'utf-8')
-    // const siteData = JSON.parse(siteDataString)
+    const siteDataString = fs.readFileSync(META_PATH + "site_data.json", 'utf-8')
+    const siteData = JSON.parse(siteDataString)
+    const aboutJsonData = siteData.about;
+    const projectsJsonData = siteData.projects;
+    
+    for (const index in projectsJsonData) 
+    {
+        const project = projectsJsonData[index];
+        projectsMetaData.push(
+            new ProjectData(
+                project.display,
+                project.priority,
+                project.title,
+                project.date,
+                project.markdownPath,
+                project.tags
+            )
+        )
+        // console.log(projectsJsonData[index].title);
+    }
 
-    // console.log(siteData.projects[0].title)
+
+    // debugging
+    for (const index in projectsMetaData) 
+    {
+        console.log(projectsMetaData[index].priority)
+
+    }
 }
 
 // let promise = new Promise(function(resolve, reject)
@@ -83,33 +109,33 @@ setTimeout(() => {
 }, 1000)
 
 
-function CompareDates(a : IProjectStruct, b : IProjectStruct)
-{
-    //sort by year
-    if(a.year < b.year)
-    {
-        return 1;
-    }
-    if(a.year > b.year)
-    {
-        return -1;
-    }
+// function CompareDates(a : ProjectStruct, b : ProjectStruct)
+// {
+//     //sort by year
+//     if(a.year < b.year)
+//     {
+//         return 1;
+//     }
+//     if(a.year > b.year)
+//     {
+//         return -1;
+//     }
 
-    //if year is the same, use the month
-    if(a.year == b.year)
-    {
-        if(a.month < b.month)
-        {
-            return 1;
-        }
-        if(a.month > b.month)
-        {
-            return -1;
-        }
-    }
+//     //if year is the same, use the month
+//     if(a.year == b.year)
+//     {
+//         if(a.month < b.month)
+//         {
+//             return 1;
+//         }
+//         if(a.month > b.month)
+//         {
+//             return -1;
+//         }
+//     }
 
-    return 0;
-}
+//     return 0;
+// }
 
 //GET PROPJECTS AND STORE THEM TO THE LIST
 function FetchProjectsAndStore()
@@ -144,23 +170,23 @@ function FetchProjectsAndStore()
                 const tags : string[] = new Array("Interactive", "Procedural", "Shaders", "Unity", "Unreal")
 
                 //encapsulates data into struct
-                const project : IProjectStruct =
-                {
-                    markdownPath : projectPaths[i],
-                    name : projectName,
-                    date : date,
-                    month : month,
-                    year : year,
-                    markdownContent : markdown,
-                    htmlContent : html,
-                    tags : tags
-                }
+                // const project : ProjectStruct =
+                // {
+                //     markdownPath : projectPaths[i],
+                //     name : projectName,
+                //     date : date,
+                //     month : month,
+                //     year : year,
+                //     markdownContent : markdown,
+                //     htmlContent : html,
+                //     tags : tags
+                // }
 
                 //push into array
-                projectsList.push(project)
+                // projectsList.push(project)
 
                 //debug the meta data
-                console.log(`Poject name : ${project.name} || date is : ${project.date}, month is ${project.month}, year is ${project.year}`);
+                // console.log(`Poject name : ${project.name} || date is : ${project.date}, month is ${project.month}, year is ${project.year}`);
                 // console.log(project);
                 
                 // console.log(projectsList.length);
@@ -197,23 +223,23 @@ function FetchProjectsAndStore()
             // const tags : string[] = new Array("Interactive", "Procedural", "Shaders", "Unity", "Unreal")
 
             //encapsulates data into struct
-            const project : IProjectStruct =
-            {
-                markdownPath : "",
-                name : p.title,
-                date : p.date,
-                month : "0",
-                year : "0",
-                markdownContent : "",
-                htmlContent : "",
-                tags : p.tags
-            }
+            // const project : ProjectStruct =
+            // {
+            //     markdownPath : "",
+            //     name : p.title,
+            //     date : p.date,
+            //     month : "0",
+            //     year : "0",
+            //     markdownContent : "",
+            //     htmlContent : "",
+            //     tags : p.tags
+            // }
 
             //push into array
-            projectsList.push(project)
+            // projectsList.push(project)
 
             //debug the meta data
-            console.log(`Poject name : ${project.name} || date is : ${project.date}, month is ${project.month}, year is ${project.year}`);
+            // console.log(`Poject name : ${project.name} || date is : ${project.date}, month is ${project.month}, year is ${project.year}`);
 
         }
     }
@@ -230,7 +256,7 @@ function FetchProjectsAndStore()
 function GenerateIndex()
 {
     //re-arrange project according to date
-    projectsList.sort(CompareDates);
+    // projectsList.sort(CompareDates);
     //INDEX HTML
 
 
@@ -278,7 +304,7 @@ function GenerateProjects()
         const html = template.ProjectHTML(project)
 
         //debug the meta data
-        console.log(`Poject name : ${project.name} || date is : ${project.date}, month is ${project.month}, year is ${project.year}`);
+        // console.log(`Poject name : ${project.name} || date is : ${project.date}, month is ${project.month}, year is ${project.year}`);
         
         //write html to output
         fs.writeFileSync(OUTPUT_PATH + `${project.name}.html`, html)

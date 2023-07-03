@@ -1,8 +1,8 @@
 import * as common from './template_common'
-import { IProjectStruct } from './data_structures'
+import { ProjectStruct } from './data_structures'
 
 
-export function Body(projects : IProjectStruct[]) : string 
+export function Body(projects : ProjectStruct[]) : string 
 {
     return `
     <body>
@@ -30,7 +30,7 @@ export function Body(projects : IProjectStruct[]) : string
     `
 }
 
-export function ProjectLists(projects : IProjectStruct[]) : string 
+export function ProjectLists(projects : ProjectStruct[]) : string 
 {
     let body = ""
     for (let i = 0; i < projects.length; i++) 
@@ -41,7 +41,7 @@ export function ProjectLists(projects : IProjectStruct[]) : string
     return body
 }
 
-export function ProjectTags(project : IProjectStruct) : string
+export function ProjectTags(project : ProjectStruct) : string
 {
     let body = ""
     const tags : string[] = project.tags
@@ -64,7 +64,7 @@ export function ProjectTagSlide(tag : string) : string
     `
 }
 
-export function ProjectSlide(project : IProjectStruct) : string 
+export function ProjectSlide(project : ProjectStruct) : string 
 {
     return `
     <div class="project-entry">
