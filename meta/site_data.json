@@ -1,12 +1,12 @@
 {
     "about" : {
-        "bio" : "",
+        "bio" : "biography.md",
 
         "links" : {
-            "photography" : "",
-            "github" : "",
-            "linkedin" : "",
-            "twitter" : ""
+            "photography" : "https://lumograph.codrinmihail.com/",
+            "github" : "https://github.com/Kodrin",
+            "linkedin" : "https://www.linkedin.com/in/codrin-mihail-tablan-negrei-870344a8",
+            "twitter" : "https://twitter.com/CodrinMihail"
         }
     },
 
@@ -80,6 +80,20 @@
                 "Unity",
                 "Shaders",
                 "VFX"
+            ]
+        },
+
+        {
+            "display" : true,
+            "priority" : 50,
+            "title" : "Machina",
+            "date" : "0122",
+            "markdown" : "0122_LFCEEA 200HZ.md",
+            "tags" : [
+                "Tool",
+                "Procedural",
+                "C++",
+                "Textures"
             ]
         }
 

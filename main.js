@@ -1,43 +1,48 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var global = require("./global");
 var fs = require("fs");
 var path = require("path");
 var template = require("./template");
 var io = require("./io");
 var data_structures_1 = require("./data_structures");
 var markdown_1 = require("@ts-stack/markdown");
-//CONSTANTS
-var RUN_MAIN = true;
-var META_PATH = __dirname + "/meta/";
-var PAGES_PATH = __dirname + "/pages/";
-var OUTPUT_PATH = __dirname + "/output/";
-var MARKDOWN_PATH = __dirname + "/md/";
 //For storing out project
-var projectsMetaData = [];
+var SITE_DATA;
 var projectsList = [];
 function MarkdownToHTML(markdown) {
     return markdown_1.Marked.parse(markdown);
 }
 if (false) {
     //read the markdown, convert to html
-    var markdown = fs.readFileSync(MARKDOWN_PATH + "sample.md", 'utf8');
+    var markdown = fs.readFileSync(global.MARKDOWN_PATH + "sample.md", 'utf8');
     var toHTML = markdown_1.Marked.parse(markdown);
     console.log(toHTML);
 }
 // importing the json meta data
 if (true) {
     // read the meta file
-    var siteDataString = fs.readFileSync(META_PATH + "site_data.json", 'utf-8');
+    var siteDataString = fs.readFileSync(global.META_PATH + "site_data.json", 'utf-8');
     var siteData = JSON.parse(siteDataString);
     var aboutJsonData = siteData.about;
     var projectsJsonData = siteData.projects;
+    // importing the about data
+    var aboutMetaData = new data_structures_1.AboutPageData(aboutJsonData.bio, aboutJsonData.links.photography, aboutJsonData.links.github, aboutJsonData.links.linkedin, aboutJsonData.links.twitter);
+    // improting all the projects
+    var projectsMetaData = [];
     for (var index in projectsJsonData) {
         var project = projectsJsonData[index];
-        projectsMetaData.push(new data_structures_1.ProjectData(project.display, project.priority, project.title, project.date, project.markdownPath, project.tags));
-        // console.log(projectsJsonData[index].title);
+        projectsMetaData.push(new data_structures_1.ProjectData(project.display, project.priority, project.title, project.date, project.markdown, project.tags));
     }
-    for (var index in projectsMetaData) {
-        console.log(projectsMetaData[index].priority);
+    // add it all to site data
+    SITE_DATA = new data_structures_1.SiteMetaData(projectsMetaData, aboutMetaData);
+    // debugging
+    console.log(SITE_DATA.aboutData.photographyLink);
+    console.log(SITE_DATA.aboutData.githubLink);
+    console.log(SITE_DATA.aboutData.twitterLink);
+    console.log(SITE_DATA.aboutData.linkedinLink);
+    for (var index in SITE_DATA.projects) {
+        console.log(SITE_DATA.projects[index].month);
     }
 }
 // let promise = new Promise(function(resolve, reject)
@@ -69,35 +74,10 @@ setTimeout(function () {
     GenerateAbout();
     GenerateProjects();
 }, 1000);
-// function CompareDates(a : ProjectStruct, b : ProjectStruct)
-// {
-//     //sort by year
-//     if(a.year < b.year)
-//     {
-//         return 1;
-//     }
-//     if(a.year > b.year)
-//     {
-//         return -1;
-//     }
-//     //if year is the same, use the month
-//     if(a.year == b.year)
-//     {
-//         if(a.month < b.month)
-//         {
-//             return 1;
-//         }
-//         if(a.month > b.month)
-//         {
-//             return -1;
-//         }
-//     }
-//     return 0;
-// }
 //GET PROPJECTS AND STORE THEM TO THE LIST
 function FetchProjectsAndStore() {
     if (false) {
-        var projectPaths_1 = io.GetFilesPathInDir(PAGES_PATH);
+        var projectPaths_1 = io.GetFilesPathInDir(global.PAGES_PATH);
         var _loop_1 = function (i) {
             //read them
             fs.readFile(projectPaths_1[i], 'utf8', function (err, markdown) {
@@ -142,7 +122,7 @@ function FetchProjectsAndStore() {
         //NEED TO USE PROMISES! or callbacks
     }
     if (true) {
-        var siteDataString = fs.readFileSync(META_PATH + "site_data.json", 'utf-8');
+        var siteDataString = fs.readFileSync(global.META_PATH + "site_data.json", 'utf-8');
         var siteData = JSON.parse(siteDataString);
         for (var i = 0; i < siteData.projects.length; i++) {
             var p = siteData.projects[i];
@@ -194,12 +174,12 @@ function GenerateIndex() {
     //     projectsList[i] = name
     // }
     //write the index html
-    fs.writeFileSync(OUTPUT_PATH + "index.html", template.IndexHTML(projectsList));
+    fs.writeFileSync(global.OUTPUT_PATH + "index.html", template.IndexHTML(projectsList));
     console.log(":: GENERATED INDEX.HTML");
 }
 function GenerateAbout() {
     //ABOUT HTML
-    fs.writeFileSync(OUTPUT_PATH + "about.html", template.AboutHTML());
+    fs.writeFileSync(global.OUTPUT_PATH + "about.html", template.AboutHTML());
 }
 function GenerateProjects() {
     // console.log(projectsList.length);
@@ -215,6 +195,6 @@ function GenerateProjects() {
         //debug the meta data
         // console.log(`Poject name : ${project.name} || date is : ${project.date}, month is ${project.month}, year is ${project.year}`);
         //write html to output
-        fs.writeFileSync(OUTPUT_PATH + "".concat(project.name, ".html"), html);
+        fs.writeFileSync(global.OUTPUT_PATH + "".concat(project.name, ".html"), html);
     }
 }

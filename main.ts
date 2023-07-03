@@ -1,24 +1,19 @@
+import * as global from './global'
 import * as fs from 'fs'
 import * as path from 'path'
 import * as template from './template'
 import * as io from './io'
 import * as debug from './debug'
 
-import { ProjectData, ProjectStruct } from './data_structures'
+import { AboutPageData, ProjectData, ProjectStruct, SiteMetaData } from './data_structures'
 import { Marked } from '@ts-stack/markdown'
 import { log } from 'console'
 
-//CONSTANTS
-const RUN_MAIN : boolean = true
 
-const META_PATH : string = __dirname + "/meta/"
-const PAGES_PATH : string = __dirname + "/pages/"
-const OUTPUT_PATH : string = __dirname + "/output/"
-const MARKDOWN_PATH : string = __dirname + "/md/"
 
 
 //For storing out project
-let projectsMetaData : ProjectData[] = []
+let SITE_DATA : SiteMetaData
 let projectsList : ProjectStruct[] = []
 
 
@@ -30,7 +25,7 @@ function MarkdownToHTML(markdown : string) : string
 if(false)
 {
     //read the markdown, convert to html
-    const markdown = fs.readFileSync(MARKDOWN_PATH + "sample.md", 'utf8')
+    const markdown = fs.readFileSync(global.MARKDOWN_PATH + "sample.md", 'utf8')
     const toHTML = Marked.parse(markdown)
     console.log(toHTML);
     
@@ -40,11 +35,25 @@ if(false)
 if(true)
 {
     // read the meta file
-    const siteDataString = fs.readFileSync(META_PATH + "site_data.json", 'utf-8')
+    const siteDataString = fs.readFileSync(global.META_PATH + "site_data.json", 'utf-8')
     const siteData = JSON.parse(siteDataString)
     const aboutJsonData = siteData.about;
     const projectsJsonData = siteData.projects;
     
+    
+    // importing the about data
+    let aboutMetaData : AboutPageData =  new AboutPageData(
+        aboutJsonData.bio,
+        aboutJsonData.links.photography,
+        aboutJsonData.links.github,
+        aboutJsonData.links.linkedin,
+        aboutJsonData.links.twitter
+    )
+    
+    
+    
+    // improting all the projects
+    let projectsMetaData : ProjectData[] = []
     for (const index in projectsJsonData) 
     {
         const project = projectsJsonData[index];
@@ -54,19 +63,23 @@ if(true)
                 project.priority,
                 project.title,
                 project.date,
-                project.markdownPath,
+                project.markdown,
                 project.tags
             )
         )
-        // console.log(projectsJsonData[index].title);
     }
 
+    // add it all to site data
+    SITE_DATA = new SiteMetaData(projectsMetaData, aboutMetaData)
 
     // debugging
-    for (const index in projectsMetaData) 
+    console.log(SITE_DATA.aboutData.photographyLink)
+    console.log(SITE_DATA.aboutData.githubLink)
+    console.log(SITE_DATA.aboutData.twitterLink)
+    console.log(SITE_DATA.aboutData.linkedinLink)
+    for (const index in SITE_DATA.projects) 
     {
-        console.log(projectsMetaData[index].priority)
-
+        console.log(SITE_DATA.projects[index].month)
     }
 }
 
@@ -109,33 +122,6 @@ setTimeout(() => {
 }, 1000)
 
 
-// function CompareDates(a : ProjectStruct, b : ProjectStruct)
-// {
-//     //sort by year
-//     if(a.year < b.year)
-//     {
-//         return 1;
-//     }
-//     if(a.year > b.year)
-//     {
-//         return -1;
-//     }
-
-//     //if year is the same, use the month
-//     if(a.year == b.year)
-//     {
-//         if(a.month < b.month)
-//         {
-//             return 1;
-//         }
-//         if(a.month > b.month)
-//         {
-//             return -1;
-//         }
-//     }
-
-//     return 0;
-// }
 
 //GET PROPJECTS AND STORE THEM TO THE LIST
 function FetchProjectsAndStore()
@@ -143,7 +129,7 @@ function FetchProjectsAndStore()
 
     if(false)
     {
-        const projectPaths = io.GetFilesPathInDir(PAGES_PATH)
+        const projectPaths = io.GetFilesPathInDir(global.PAGES_PATH)
 
         //for each project markdown you find
         for (let i = 0; i < projectPaths.length; i++) 
@@ -202,7 +188,7 @@ function FetchProjectsAndStore()
     
     if(true)
     {
-        const siteDataString = fs.readFileSync(META_PATH + "site_data.json", 'utf-8')
+        const siteDataString = fs.readFileSync(global.META_PATH + "site_data.json", 'utf-8')
         const siteData = JSON.parse(siteDataString)
         for (let i = 0; i < siteData.projects.length; i++) 
         {
@@ -272,7 +258,7 @@ function GenerateIndex()
     // }
 
     //write the index html
-    fs.writeFileSync(OUTPUT_PATH + "index.html", template.IndexHTML(projectsList))
+    fs.writeFileSync(global.OUTPUT_PATH + "index.html", template.IndexHTML(projectsList))
 
     console.log(":: GENERATED INDEX.HTML");
     
@@ -281,7 +267,7 @@ function GenerateIndex()
 function GenerateAbout()
 {
     //ABOUT HTML
-    fs.writeFileSync(OUTPUT_PATH + "about.html", template.AboutHTML())
+    fs.writeFileSync(global.OUTPUT_PATH + "about.html", template.AboutHTML())
 }
 
 
@@ -307,7 +293,7 @@ function GenerateProjects()
         // console.log(`Poject name : ${project.name} || date is : ${project.date}, month is ${project.month}, year is ${project.year}`);
         
         //write html to output
-        fs.writeFileSync(OUTPUT_PATH + `${project.name}.html`, html)
+        fs.writeFileSync(global.OUTPUT_PATH + `${project.name}.html`, html)
         
     }
 }
