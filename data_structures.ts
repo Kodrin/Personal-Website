@@ -107,33 +107,37 @@ export class SiteMetaData
         this.projects = projects
         this.aboutData = aboutData
     }
+
+    public SortProjectsByDate()
+    {
+        this.projects.sort(SortProjectsByDate)
+    }
+
+    public SortProjectsByPriority()
+    {
+        this.projects.sort(SortProjectsByPriority)
+    }
 }
 
 
 export function SortProjectsByPriority(a : ProjectData, b : ProjectData)
 {
     //sort by year
-    if(a.year < b.year)
-    {
-        return 1;
-    }
-    if(a.year > b.year)
+    if(a.priority < b.priority)
     {
         return -1;
     }
 
-    //if year is the same, use the month
-    if(a.year == b.year)
+    if(a.priority > b.priority)
     {
-        if(a.month < b.month)
-        {
-            return 1;
-        }
-        if(a.month > b.month)
-        {
-            return -1;
-        }
+        return 1;
     }
+
+    if(a.priority = b.priority)
+    {
+        return -1;
+    }
+
 
     return 0;
 }

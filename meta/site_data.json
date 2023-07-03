@@ -15,10 +15,10 @@
 
         {
             "display" : true,
-            "priority" : 0,
+            "priority" : 1,
             "title" : "LFCEEA 200HZ",
             "date" : "0122",
-            "markdown" : "0122_LFCEEA 200HZ.md",
+            "markdown" : "Arbres.md",
             "tags" : [
                 "Installation",
                 "Unity",
@@ -32,7 +32,7 @@
             "priority" : 10,
             "title" : "Monolight Oasis",
             "date" : "1221",
-            "markdown" : "1221_Monolight Oasis.md",
+            "markdown" : "Monolight_Oasis.md",
             "tags" : [
                 "Audio-Reactive",
                 "Unity",
@@ -44,58 +44,159 @@
         {
             "display" : true,
             "priority" : 20,
-            "title" : "LFCEEA 200HZ",
-            "date" : "0122",
-            "markdown" : "0122_LFCEEA 200HZ.md",
+            "title" : "Houdini Tooling",
+            "date" : "1121",
+            "markdown" : "Houdini_Tooling.md",
             "tags" : [
-                "Installation",
-                "Unity",
-                "Shaders",
-                "VFX"
+                "Procedural",
+                "VFX",
+                "Houdini",
+                "Tools"
             ]
         },
 
         {
             "display" : true,
             "priority" : 30,
-            "title" : "LFCEEA 200HZ",
-            "date" : "0122",
-            "markdown" : "0122_LFCEEA 200HZ.md",
+            "title" : "Point Cloud Exploration I",
+            "date" : "1021",
+            "markdown" : "Point_Cloud_Exploration_I.md",
             "tags" : [
-                "Installation",
+                "Experimentation",
                 "Unity",
                 "Shaders",
-                "VFX"
+                "Point Clouds"
             ]
         },
 
         {
             "display" : true,
             "priority" : 40,
-            "title" : "LFCEEA 200HZ",
-            "date" : "0122",
-            "markdown" : "0122_LFCEEA 200HZ.md",
+            "title" : "Bio-Sim",
+            "date" : "1220",
+            "markdown" : "Bio_Sim.md",
             "tags" : [
-                "Installation",
+                "Real-Time",
                 "Unity",
-                "Shaders",
-                "VFX"
+                "Shaders"
             ]
         },
 
         {
             "display" : true,
             "priority" : 50,
-            "title" : "Machina",
-            "date" : "0122",
-            "markdown" : "0122_LFCEEA 200HZ.md",
+            "title" : "Real-Time Nirvana",
+            "date" : "1020",
+            "markdown" : "Nirvana.md",
             "tags" : [
                 "Tool",
+                "Installation",
                 "Procedural",
-                "C++",
-                "Textures"
+                "Compositing",
+                "Unity",
+                "Shaders"
+            ]
+        },
+
+        {
+            "display" : true,
+            "priority" : 60,
+            "title" : "TeamLab Firefly Engine",
+            "date" : "0920",
+            "markdown" : "Firefly.md",
+            "tags" : [
+                "Tool",
+                "Installation",
+                "Procedural",
+                "Unity",
+                "Shaders"
+            ]
+        },
+
+        {
+            "display" : true,
+            "priority" : 70,
+            "title" : "Massless Clouds",
+            "date" : "0320",
+            "markdown" : "Clouds.md",
+            "tags" : [
+                "Installation",
+                "Procedural",
+                "Unity",
+                "Shaders",
+                "Raymarching"
+            ]
+        },
+
+        {
+            "display" : true,
+            "priority" : 80,
+            "title" : "Flowfield",
+            "date" : "1019",
+            "markdown" : "Flowfield.md",
+            "tags" : [
+                "VFX",
+                "Procedural",
+                "Unity",
+                "SDF"
+            ]
+        },
+
+        {
+            "display" : true,
+            "priority" : 90,
+            "title" : "Obsidian",
+            "date" : "0319",
+            "markdown" : "Obsidian.md",
+            "tags" : [
+                "Installation",
+                "Point Clouds",
+                "Unity",
+                "Shaders"
+            ]
+        },
+
+        {
+            "display" : true,
+            "priority" : 100,
+            "title" : "Chroma",
+            "date" : "1218",
+            "markdown" : "Chroma.md",
+            "tags" : [
+                "Tool",
+                "Hardware",
+                "Arduino",
+                "Performance"
+            ]
+        },
+
+        {
+            "display" : true,
+            "priority" : 110,
+            "title" : "Winds Of The World",
+            "date" : "1118",
+            "markdown" : "Winds.md",
+            "tags" : [
+                "Web",
+                "Real-Time",
+                "Three.js"
+            ]
+        },
+
+        {
+            "display" : true,
+            "priority" : 120,
+            "title" : "Mood Analyzer",
+            "date" : "0418",
+            "markdown" : "Mood.md",
+            "tags" : [
+                "Kinect",
+                "Processing",
+                "Installation"
             ]
         }
+
+
 
     ]
 }

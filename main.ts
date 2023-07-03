@@ -65,6 +65,7 @@ FetchProjectsAndStore()
 
 setTimeout(() => { 
     console.log(":: FINISHED FETCHING PROJECTS...")
+    SortProjectData()
     GenerateIndex()
     GenerateAbout()
     GenerateProjects()
@@ -194,6 +195,11 @@ function FetchProjectsAndStore()
         
     // }, 2000);
 
+}
+
+function SortProjectData()
+{
+    SITE_DATA.SortProjectsByPriority()
 }
 
 function GenerateIndex()

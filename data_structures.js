@@ -57,25 +57,25 @@ var SiteMetaData = /** @class */ (function () {
         this.projects = projects;
         this.aboutData = aboutData;
     }
+    SiteMetaData.prototype.SortProjectsByDate = function () {
+        this.projects.sort(SortProjectsByDate);
+    };
+    SiteMetaData.prototype.SortProjectsByPriority = function () {
+        this.projects.sort(SortProjectsByPriority);
+    };
     return SiteMetaData;
 }());
 exports.SiteMetaData = SiteMetaData;
 function SortProjectsByPriority(a, b) {
     //sort by year
-    if (a.year < b.year) {
-        return 1;
-    }
-    if (a.year > b.year) {
+    if (a.priority < b.priority) {
         return -1;
     }
-    //if year is the same, use the month
-    if (a.year == b.year) {
-        if (a.month < b.month) {
-            return 1;
-        }
-        if (a.month > b.month) {
-            return -1;
-        }
+    if (a.priority > b.priority) {
+        return 1;
+    }
+    if (a.priority = b.priority) {
+        return -1;
     }
     return 0;
 }
