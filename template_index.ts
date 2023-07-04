@@ -1,8 +1,8 @@
 import * as common from './template_common'
-import { ProjectData } from './data_structures'
+import { ProjectData, AboutPageData } from './data_structures'
 
 
-export function Body(projects : ProjectData[]) : string 
+export function Body(about : AboutPageData, projects : ProjectData[]) : string 
 {
     return `
     <body>
@@ -16,7 +16,7 @@ export function Body(projects : ProjectData[]) : string
             <div id="header-links">
                 <h1><a href="index.html">Projects</a>  </h1>
                 <h1><a href="about.html">About</a>  </h1>
-                <h1><a href="https://lumograph.codrinmihail.com/">Photography</a>  </h1>
+                <h1><a href="${about.photographyLink}">Photography</a>  </h1>
             </div>
             </section>
 
@@ -24,7 +24,7 @@ export function Body(projects : ProjectData[]) : string
             <hr class="line">
 
             ${ProjectLists(projects)}
-            ${common.Footer()}
+            ${common.Footer(about)}
         </div>
     </body>
     `
@@ -35,6 +35,7 @@ export function ProjectLists(projects : ProjectData[]) : string
     let body = ""
     for (let i = 0; i < projects.length; i++) 
     {
+        if(!projects[i].display) continue;
         body += ProjectSlide(projects[i])
     }
 

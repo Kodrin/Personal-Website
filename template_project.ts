@@ -1,19 +1,19 @@
 import * as common from './template_common'
-import { ProjectData } from './data_structures'
+import { ProjectData, AboutPageData } from './data_structures'
 
 
-export function ProjectHTML(project : ProjectData) : string
+export function ProjectHTML(about : AboutPageData, project : ProjectData) : string
 {
     return `
     <!DOCTYPE html>
     <html lang="en">
     ${common.Header()}
-    ${Body(project)}
+    ${Body(about, project)}
     </html>
     `
 }
 
-export function Body(project : ProjectData) : string 
+export function Body(about : AboutPageData, project : ProjectData) : string 
 {
     return `
     <body>
@@ -38,7 +38,7 @@ export function Body(project : ProjectData) : string
         <!--divider-->
         <hr class="line">
 
-        ${common.Footer()}
+        ${common.Footer(about)}
 
     </div>
     </body>

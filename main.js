@@ -9,9 +9,9 @@ var data_structures_1 = require("./data_structures");
 FetchProjectsAndStore();
 console.log(":: FINISHED FETCHING PROJECTS...");
 SortProjectData();
-GenerateIndex();
-GenerateAbout();
-GenerateProjects();
+GenerateIndexPage();
+GenerateAboutPage();
+GenerateProjectPages();
 //GET PROPJECTS AND STORE THEM TO THE LIST
 function FetchProjectsAndStore() {
     // importing the json meta data
@@ -35,26 +35,23 @@ function FetchProjectsAndStore() {
 function SortProjectData() {
     exports.SITE_DATA.SortProjectsByPriority();
 }
-function GenerateIndex() {
+function GenerateIndexPage() {
     //write the index html
-    fs.writeFileSync(global.OUTPUT_PATH + "index.html", template.IndexHTML(exports.SITE_DATA.projects));
+    fs.writeFileSync(global.OUTPUT_PATH + "index.html", template.IndexHTML(exports.SITE_DATA.aboutData, exports.SITE_DATA.projects));
     console.log(":: GENERATED INDEX.HTML");
 }
-function GenerateAbout() {
+function GenerateAboutPage() {
     //ABOUT HTML
-    fs.writeFileSync(global.OUTPUT_PATH + "about.html", template.AboutHTML());
+    fs.writeFileSync(global.OUTPUT_PATH + "about.html", template.AboutHTML(exports.SITE_DATA.aboutData));
 }
-function GenerateProjects() {
-    // console.log(projectsList.length);
-    //PROJECTS HTML
-    //get all paths for markdown project files 
-    // const projectPaths = io.GetFilesPathInDir(PAGES_PATH)
+function GenerateProjectPages() {
     //for each project markdown you find
-    for (var i = 0; i < exports.SITE_DATA.projects.length; i++) {
-        //project
-        var project = exports.SITE_DATA.projects[i];
+    for (var index in exports.SITE_DATA.projects) {
+        var project = exports.SITE_DATA.projects[index];
+        if (!project.display)
+            continue; // if display not enabled, dont generate
         // create project html with data 
-        var html = template.ProjectHTML(project);
+        var html = template.ProjectHTML(exports.SITE_DATA.aboutData, project);
         //debug the meta data
         console.log("Poject name : ".concat(project.title, " || date is : ").concat(project.date, ", month is ").concat(project.month, ", year is ").concat(project.year));
         //write html to output

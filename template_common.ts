@@ -17,14 +17,14 @@ export function Header(): string
 }
 
 
-export function Footer() : string 
+export function Footer(about : AboutPageData) : string 
 {
     return `
     <section id="footer">
         <div id="footer-links">
-            <h1><a href="https://github.com/Kodrin">GitHub</a>  </h1>
-            <h1><a href="https://www.linkedin.com/in/codrin-mihail-tablan-negrei-870344a8">LinkedIn</a></h1>
-            <h1><a href="https://twitter.com/CodrinMihail">Twitter</a></h1>
+            <h1><a href="${about.githubLink}">GitHub</a>  </h1>
+            <h1><a href="${about.linkedinLink}">LinkedIn</a></h1>
+            <h1><a href="${about.twitterLink}">Twitter</a></h1>
         </div>
     </section>
     `;

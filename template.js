@@ -13,15 +13,15 @@ var HEADER = "";
 var BODY = "";
 var FOOTER = "";
 var MEDIA = "";
-function IndexHTML(projects) {
-    return "\n    <!DOCTYPE html>\n    <html lang=\"en\">\n    ".concat(common.Header(), "\n    ").concat(index_template.Body(projects), "\n    </html>\n    ");
+function IndexHTML(about, projects) {
+    return "\n    <!DOCTYPE html>\n    <html lang=\"en\">\n    ".concat(common.Header(), "\n    ").concat(index_template.Body(about, projects), "\n    </html>\n    ");
 }
 exports.IndexHTML = IndexHTML;
-function ProjectHTML(project) {
-    return "\n    <!DOCTYPE html>\n    <html lang=\"en\">\n    ".concat(common.Header(), "\n    ").concat(project_template.Body(project), "\n    </html>\n    ");
+function ProjectHTML(about, project) {
+    return "\n    <!DOCTYPE html>\n    <html lang=\"en\">\n    ".concat(common.Header(), "\n    ").concat(project_template.Body(about, project), "\n    </html>\n    ");
 }
 exports.ProjectHTML = ProjectHTML;
-function AboutHTML() {
-    return "\n    <!DOCTYPE html>\n    <html lang=\"en\">\n    ".concat(common.Header(), "\n    ").concat(about_template.Body(), "\n    </html>\n    ");
+function AboutHTML(about) {
+    return "\n    <!DOCTYPE html>\n    <html lang=\"en\">\n    ".concat(common.Header(), "\n    ").concat(about_template.Body(about), "\n    </html>\n    ");
 }
 exports.AboutHTML = AboutHTML;

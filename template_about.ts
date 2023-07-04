@@ -1,7 +1,8 @@
 import * as common from './template_common'
+import { AboutPageData, ProjectData, SiteMetaData } from './data_structures'
 
 
-export function Body() : string
+export function Body(about : AboutPageData) : string
 {
     return `
     <body>
@@ -14,7 +15,7 @@ export function Body() : string
             <div id="header-links">
                 <h1><a href="index.html">Projects</a>  </h1>
                 <h1><a href="about.html">About</a>  </h1>
-                <h1><a href="https://lumograph.codrinmihail.com/">Photography</a>  </h1>
+                <h1><a href="${about.photographyLink}">Photography</a>  </h1>
             </div>
         </section>
 
@@ -32,7 +33,7 @@ export function Body() : string
         <!--divider-->
         <hr class="line">
 
-        ${common.Footer()}
+        ${common.Footer(about)}
     </div>
     </body>
     `
