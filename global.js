@@ -7,3 +7,4 @@ exports.META_PATH = __dirname + "/meta/";
 exports.PAGES_PATH = __dirname + "/pages/";
 exports.OUTPUT_PATH = __dirname + "/output/";
 exports.MARKDOWN_PATH = __dirname + "/md/";
+// export let SITE_DATA : data.SiteMetaData

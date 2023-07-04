@@ -1,3 +1,4 @@
+import { AboutPageData, ProjectData, SiteMetaData } from './data_structures'
 
 
 export function Header(): string
