@@ -1,13 +1,8 @@
 import * as global from './global'
 import * as fs from 'fs'
-import * as path from 'path'
 import * as template from './template'
-import * as io from './io'
-import * as debug from './debug'
 
 import { AboutPageData, ProjectData, SiteMetaData } from './data_structures'
-import { Marked } from '@ts-stack/markdown'
-import { log } from 'console'
 
 
 
