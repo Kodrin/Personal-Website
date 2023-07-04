@@ -100,7 +100,7 @@ hr.line
 }
 
 
-#header, #project-header, #footer
+#header, #project-header, #project-details, #footer
 {
     display: grid;
     grid-template-columns: repeat(13, 1fr);
@@ -246,18 +246,52 @@ hr.line
 }
 
 /* project pages */
-#project-details > h1
+#project-details
 {
+    /* display: inherit; */
+}
+
+#project-details h1
+{
+    grid-column: 1 / 14;
     margin-bottom: 2vh;
 }
 
-#project-details > p
+#project-details p
 {
+    grid-column: 1 / 14;
     font-size: 21px;
     margin-bottom: 2vh;
 }
 
 #project-details > img, .vimeo
 {
+    
+}
 
+.p-title
+{
+    font-family: HKGrotesk-Bold;
+    font-size: 21px;
+    margin-bottom: 2vh;
+    
+}
+
+.p-content
+{
+    font-family: HKGrotesk-Regular;
+    font-size: 21px;
+    margin-bottom: 2vh;
+    
+}
+
+/* sectioning  */
+.one-third
+{
+    grid-column: 1 / 4;
+}
+
+.two-third
+{
+    grid-column: 5 / 14;
 }

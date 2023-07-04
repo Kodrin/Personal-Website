@@ -37,10 +37,12 @@ export function Body(about : AboutPageData, project : ProjectData) : string
         
         <!--divider-->
         <hr class="line">
-
+        
         ${common.Footer(about)}
-
-    </div>
-    </body>
-    `
-}
+        
+        </div>
+        </body>
+        `
+    }
+    
+    // project html
