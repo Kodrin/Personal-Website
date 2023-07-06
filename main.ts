@@ -1,6 +1,7 @@
 import * as global from './global'
 import * as fs from 'fs'
 import * as template from './template'
+import { Interpreter } from './interpreter'
 
 import { AboutPageData, ProjectData, SiteMetaData } from './data_structures'
 
@@ -9,9 +10,12 @@ import { AboutPageData, ProjectData, SiteMetaData } from './data_structures'
 
 //For storing out project
 export let SITE_DATA : SiteMetaData
+let foo : Interpreter = new Interpreter(global.PAGES_PATH + "Sample.md")
+foo.Interpret()
 
-
-//PROGRAMS
+if(false)
+{
+    //PROGRAMS
 FetchProjectsAndStore()
 
 console.log(":: FINISHED FETCHING PROJECTS...")
@@ -20,7 +24,7 @@ GenerateIndexPage()
 GenerateAboutPage()
 GenerateProjectPages()
 
-
+}
 
 
 //GET PROPJECTS AND STORE THEM TO THE LIST

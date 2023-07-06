@@ -295,3 +295,9 @@ hr.line
 {
     grid-column: 5 / 14;
 }
+
+.one-third-img
+{
+    display: inline-block;
+    width: 33.3%;
+}

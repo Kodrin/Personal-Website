@@ -4,14 +4,19 @@ exports.SITE_DATA = void 0;
 var global = require("./global");
 var fs = require("fs");
 var template = require("./template");
+var interpreter_1 = require("./interpreter");
 var data_structures_1 = require("./data_structures");
-//PROGRAMS
-FetchProjectsAndStore();
-console.log(":: FINISHED FETCHING PROJECTS...");
-SortProjectData();
-GenerateIndexPage();
-GenerateAboutPage();
-GenerateProjectPages();
+var foo = new interpreter_1.Interpreter(global.PAGES_PATH + "Sample.md");
+foo.Interpret();
+if (false) {
+    //PROGRAMS
+    FetchProjectsAndStore();
+    console.log(":: FINISHED FETCHING PROJECTS...");
+    SortProjectData();
+    GenerateIndexPage();
+    GenerateAboutPage();
+    GenerateProjectPages();
+}
 //GET PROPJECTS AND STORE THEM TO THE LIST
 function FetchProjectsAndStore() {
     // importing the json meta data
