@@ -1,8 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Interpreter = exports.Glyph = exports.Glyphs = void 0;
+exports.Interpreter = exports.Glyph = exports.ParsingTable = void 0;
 var fs = require("fs");
-exports.Glyphs = [];
+exports.ParsingTable = {
+    '@': ["<div class = \"table\">", "</div>"],
+    '$': ["<div class = \"image\">", "</div>"],
+    '^': ["<div class = \"text\">", "</div>"]
+};
 var Glyph = /** @class */ (function () {
     function Glyph(identifier, content) {
         this.identifier = identifier;
@@ -42,9 +46,21 @@ var Interpreter = /** @class */ (function () {
             //increment index
             index++;
         }
-        for (var index_1 in this.glyphs) {
-            console.log("Identifier: ".concat(this.glyphs[index_1].identifier, ", ").concat(this.glyphs[index_1].content));
+        // for (const index in this.glyphs) 
+        // {
+        //     console.log(`Identifier: ${this.glyphs[index].identifier}, ${this.glyphs[index].content}`)
+        // }
+        this.ConvertToHTML();
+    };
+    Interpreter.prototype.ConvertToHTML = function () {
+        var html = "";
+        for (var index in this.glyphs) {
+            var id = this.glyphs[index].identifier;
+            var content = this.glyphs[index].content;
+            var tags = exports.ParsingTable[id];
+            html += tags[0] + content + tags[1];
         }
+        console.log(html);
     };
     return Interpreter;
 }());

@@ -3,10 +3,12 @@ import * as global from './global'
 import { log } from 'console'
 
 
-export const Glyphs : string[] =
-[
-    
-]
+export const ParsingTable = 
+{
+    '@' : [`<div class = "table">`, `</div>`],
+    '$' : [`<div class = "image">`, `</div>`],
+    '^' : [`<div class = "text">`, `</div>`]
+}
 
 export class Glyph
 {
@@ -79,10 +81,29 @@ export class Interpreter
             index++
         }
 
+        // for (const index in this.glyphs) 
+        // {
+        //     console.log(`Identifier: ${this.glyphs[index].identifier}, ${this.glyphs[index].content}`)
+
+        // }
+
+        this.ConvertToHTML()
+    }
+    
+    public ConvertToHTML()
+    {
+        let html : string = ""
         for (const index in this.glyphs) 
         {
-            console.log(`Identifier: ${this.glyphs[index].identifier}, ${this.glyphs[index].content}`)
+            const id = this.glyphs[index].identifier
+            const content = this.glyphs[index].content
+            
+            const tags : string[] = ParsingTable[id] 
 
+            html += tags[0] + content + tags[1]
         }
+
+        console.log(html)
+
     }
 }
