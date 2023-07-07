@@ -100,7 +100,7 @@ export class Interpreter
             
             const tags : string[] = ParsingTable[id] 
 
-            html += tags[0] + content + tags[1]
+            html += tags[0] + content + tags[1] + `\n`
         }
 
         console.log(html)

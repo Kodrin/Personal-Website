@@ -58,7 +58,7 @@ var Interpreter = /** @class */ (function () {
             var id = this.glyphs[index].identifier;
             var content = this.glyphs[index].content;
             var tags = exports.ParsingTable[id];
-            html += tags[0] + content + tags[1];
+            html += tags[0] + content + tags[1] + "\n";
         }
         console.log(html);
     };
