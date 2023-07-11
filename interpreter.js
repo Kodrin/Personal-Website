@@ -61,6 +61,7 @@ var Interpreter = /** @class */ (function () {
             html += tags[0] + content + tags[1] + "\n";
         }
         console.log(html);
+        this.html = html;
     };
     return Interpreter;
 }());

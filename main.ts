@@ -10,10 +10,10 @@ import { AboutPageData, ProjectData, SiteMetaData } from './data_structures'
 
 //For storing out project
 export let SITE_DATA : SiteMetaData
-let foo : Interpreter = new Interpreter(global.PAGES_PATH + "Sample.md")
-foo.Interpret()
+// let foo : Interpreter = new Interpreter(global.PAGES_PATH + "Sample.md")
+// foo.Interpret()
 
-if(false)
+if(true)
 {
     //PROGRAMS
 FetchProjectsAndStore()

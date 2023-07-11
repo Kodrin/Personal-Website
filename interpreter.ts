@@ -27,6 +27,7 @@ export class Interpreter
     public filePath : string
     public fileContent : string
     public glyphs : Glyph[] = []
+    public html : string
 
     private searchingStart : boolean = true
     private startIndex : number
@@ -104,6 +105,6 @@ export class Interpreter
         }
 
         console.log(html)
-
+        this.html = html
     }
 }

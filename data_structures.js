@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.SortProjectsByDate = exports.SortProjectsByPriority = exports.SiteMetaData = exports.ProjectData = exports.AboutPageData = void 0;
 var fs = require("fs");
 var global = require("./global");
+var interpreter_1 = require("./interpreter");
 var markdown_1 = require("@ts-stack/markdown");
 var AboutPageData = /** @class */ (function () {
     function AboutPageData(bio, photographyLink, githubLink, linkedinLink, twitterLink) {
@@ -26,6 +27,7 @@ var ProjectData = /** @class */ (function () {
         this.GetMonth();
         this.GetYear();
         this.ReadMarkdown();
+        this.InterpretMarkdown();
     }
     ProjectData.prototype.GetMonth = function () {
         this.month = parseInt(this.date.slice(0, 2));
@@ -48,6 +50,11 @@ var ProjectData = /** @class */ (function () {
         catch (error) {
             console.error("Error Reading ".concat(global.PAGES_PATH + this.markdownPath));
         }
+    };
+    ProjectData.prototype.InterpretMarkdown = function () {
+        var foo = new interpreter_1.Interpreter(global.PAGES_PATH + "Sample.md");
+        foo.Interpret();
+        this.html = foo.html;
     };
     return ProjectData;
 }());

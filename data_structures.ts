@@ -1,5 +1,6 @@
 import * as fs from 'fs'
 import * as global from './global'
+import {Interpreter} from './interpreter'
 
 import { Marked } from '@ts-stack/markdown'
 
@@ -60,6 +61,7 @@ export class ProjectData
         this.GetMonth()
         this.GetYear()
         this.ReadMarkdown()
+        this.InterpretMarkdown()
     }
 
     public GetMonth() : number
@@ -92,6 +94,13 @@ export class ProjectData
         {
             console.error(`Error Reading ${global.PAGES_PATH + this.markdownPath}`)
         }
+    }
+
+    public InterpretMarkdown()
+    {
+        let foo : Interpreter = new Interpreter(global.PAGES_PATH + "Sample.md")
+        foo.Interpret()
+        this.html = foo.html
     }
 }
 

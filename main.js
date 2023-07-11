@@ -4,11 +4,10 @@ exports.SITE_DATA = void 0;
 var global = require("./global");
 var fs = require("fs");
 var template = require("./template");
-var interpreter_1 = require("./interpreter");
 var data_structures_1 = require("./data_structures");
-var foo = new interpreter_1.Interpreter(global.PAGES_PATH + "Sample.md");
-foo.Interpret();
-if (false) {
+// let foo : Interpreter = new Interpreter(global.PAGES_PATH + "Sample.md")
+// foo.Interpret()
+if (true) {
     //PROGRAMS
     FetchProjectsAndStore();
     console.log(":: FINISHED FETCHING PROJECTS...");
