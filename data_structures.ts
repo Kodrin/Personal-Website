@@ -98,7 +98,7 @@ export class ProjectData
 
     public InterpretMarkdown()
     {
-        let foo : Interpreter = new Interpreter(global.PAGES_PATH + "Sample.md")
+        let foo : Interpreter = new Interpreter(global.PAGES_PATH + this.markdownPath)
         foo.Interpret()
         this.html = foo.html
     }

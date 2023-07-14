@@ -5,8 +5,8 @@ import { log } from 'console'
 
 export const ParsingTable = 
 {
-    '@' : [`<div class = "table">`, `</div>`],
-    '$' : [`<div class = "image">`, `</div>`],
+    'P' : [`<p>`, `</p>`],
+    'I' : [`<p><img src="`, `"></p>`],
     '^' : [`<div class = "text">`, `</div>`]
 }
 

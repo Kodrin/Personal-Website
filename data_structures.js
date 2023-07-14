@@ -52,7 +52,7 @@ var ProjectData = /** @class */ (function () {
         }
     };
     ProjectData.prototype.InterpretMarkdown = function () {
-        var foo = new interpreter_1.Interpreter(global.PAGES_PATH + "Sample.md");
+        var foo = new interpreter_1.Interpreter(global.PAGES_PATH + this.markdownPath);
         foo.Interpret();
         this.html = foo.html;
     };

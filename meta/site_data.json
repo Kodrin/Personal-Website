@@ -15,6 +15,20 @@
 
         {
             "display" : true,
+            "priority" : 0,
+            "title" : "Sample",
+            "date" : "0122",
+            "markdown" : "Sample.md",
+            "tags" : [
+                "Installation",
+                "Unity",
+                "Shaders",
+                "VFX"
+            ]
+        },
+
+        {
+            "display" : true,
             "priority" : 1,
             "title" : "LFCEEA 200HZ",
             "date" : "0122",

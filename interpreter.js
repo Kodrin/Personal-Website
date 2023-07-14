@@ -3,8 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Interpreter = exports.Glyph = exports.ParsingTable = void 0;
 var fs = require("fs");
 exports.ParsingTable = {
-    '@': ["<div class = \"table\">", "</div>"],
-    '$': ["<div class = \"image\">", "</div>"],
+    'P': ["<p>", "</p>"],
+    'I': ["<p><img src=\"", "\"></p>"],
     '^': ["<div class = \"text\">", "</div>"]
 };
 var Glyph = /** @class */ (function () {
