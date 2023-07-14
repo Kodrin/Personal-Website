@@ -5,7 +5,7 @@ var fs = require("fs");
 exports.ParsingTable = {
     'P': ["<p>", "</p>"],
     'I': ["<p><img src=\"", "\"></p>"],
-    '^': ["<div class = \"text\">", "</div>"]
+    'V': ["<div class=\"videoWrapper\"><iframe src=\"", "\" autoplay=\"0\" frameborder=\"0\" allowfullscreen></iframe></div>"]
 };
 var Glyph = /** @class */ (function () {
     function Glyph(identifier, content) {

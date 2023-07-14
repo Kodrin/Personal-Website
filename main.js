@@ -57,7 +57,8 @@ function GenerateProjectPages() {
         // create project html with data 
         var html = template.ProjectHTML(exports.SITE_DATA.aboutData, project);
         //debug the meta data
-        console.log("Poject name : ".concat(project.title, " || date is : ").concat(project.date, ", month is ").concat(project.month, ", year is ").concat(project.year));
+        // console.log(`Poject name : ${project.title} || date is : ${project.date}, month is ${project.month}, year is ${project.year}`);
+        console.log("Generated::Poject : ".concat(project.title));
         //write html to output
         fs.writeFileSync(global.OUTPUT_PATH + "".concat(project.title, ".html"), html);
     }

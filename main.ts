@@ -103,7 +103,8 @@ function GenerateProjectPages()
         const html = template.ProjectHTML(SITE_DATA.aboutData, project)
 
         //debug the meta data
-        console.log(`Poject name : ${project.title} || date is : ${project.date}, month is ${project.month}, year is ${project.year}`);
+        // console.log(`Poject name : ${project.title} || date is : ${project.date}, month is ${project.month}, year is ${project.year}`);
+        console.log(`Generated::Poject : ${project.title}`);
         
         //write html to output
         fs.writeFileSync(global.OUTPUT_PATH + `${project.title}.html`, html)

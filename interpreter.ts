@@ -7,7 +7,7 @@ export const ParsingTable =
 {
     'P' : [`<p>`, `</p>`],
     'I' : [`<p><img src="`, `"></p>`],
-    '^' : [`<div class = "text">`, `</div>`]
+    'V' : [`<div class="videoWrapper"><iframe src="`, `" autoplay="0" frameborder="0" allowfullscreen></iframe></div>`]
 }
 
 export class Glyph
