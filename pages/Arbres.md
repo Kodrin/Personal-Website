@@ -19,16 +19,12 @@ I{media/LFCEEA 200HZ/12.jpg}
 I{media/LFCEEA 200HZ/13.jpg}
 I{media/LFCEEA 200HZ/14.jpg}
 
-<div class="one-third p-title">Process</div>
-
-<div class="two-third p-content">
-Before using the point cloud that originally scanned, It had to undergo a rigurous process of sorting, reducing and segmenting the points into separate using open source software like Cloud Compare. This meant reducing a 1 billion point scan to several scans that were between 10-50 million points each. The work didn't stop there as the color data on the points had to go through extensive color correction measure with additional effects on them. You can see the treatment of the data down below with the first frame being the data with the original colors.
-</div>
+1{Process}
+2{Before using the point cloud that originally scanned, It had to undergo a rigurous process of sorting, reducing and segmenting the points into separate using open source software like Cloud Compare. This meant reducing a 1 billion point scan to several scans that were between 10-50 million points each. The work didn't stop there as the color data on the points had to go through extensive color correction measure with additional effects on them. You can see the treatment of the data down below with the first frame being the data with the original colors.}
 
 I{media/LFCEEA 200HZ/p1.jpg}
 I{media/LFCEEA 200HZ/p2.jpg}
 I{media/LFCEEA 200HZ/p3.jpg}
 I{media/LFCEEA 200HZ/p4.jpg}
 I{media/LFCEEA 200HZ/p5.jpg}
-
 I{media/LFCEEA 200HZ/v1.gif}

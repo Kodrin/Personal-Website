@@ -5,9 +5,15 @@ import { log } from 'console'
 
 export const ParsingTable = 
 {
+    'H' : [`<h1>`, `</h1>`],
     'P' : [`<p>`, `</p>`],
     'I' : [`<p><img src="`, `"></p>`],
-    'V' : [`<div class="videoWrapper"><iframe src="`, `" autoplay="0" frameborder="0" allowfullscreen></iframe></div>`]
+    'V' : [`<div class="videoWrapper"><iframe src="`, `" autoplay="0" frameborder="0" allowfullscreen></iframe></div>`],
+    'M' : [`<div class="videoWrapper"><iframe src="`, `" autoplay="0" frameborder="0" allowfullscreen></iframe></div>`],
+    '1' : [`<div class="one-third"><p>`, `</p></div>`],
+    '2' : [`<div class="two-third"><p>`, `</p></div>`],
+    '3' : [`<div class="three-third"><p>`, `</p></div>`],
+    'L' : [`<hr class="line">`, ``]
 }
 
 export class Glyph
