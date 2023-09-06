@@ -33,9 +33,10 @@ img
 .videoWrapper 
 {
     position: relative;
+    grid-column: 1 / 14;
     padding-bottom: 56.25%;
     height: 0;
-    display: block; 
+    /* display: block;  */
     margin-bottom: 2vh;
 }
 
@@ -264,10 +265,10 @@ hr.line
     margin-bottom: 2vh;
 }
 
-#project-details > img, .vimeo
+/* #project-details > img, .vimeo
 {
     
-}
+} */
 
 .p-title
 {
