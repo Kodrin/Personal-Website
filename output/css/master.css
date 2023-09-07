@@ -27,7 +27,7 @@ img
 {
     display: block;
     width: 100%;
-    margin-bottom: 2vh;
+    /* margin-bottom: 2vh; */
 }
 
 .videoWrapper 

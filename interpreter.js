@@ -4,6 +4,7 @@ exports.Interpreter = exports.Glyph = exports.ParsingTable = void 0;
 var fs = require("fs");
 exports.ParsingTable = {
     'H': ["<h1>", "</h1>"],
+    'T': ["<h3>", "</h3>"],
     'P': ["<p>", "</p>"],
     'I': ["<p><img src=\"", "\"></p>"],
     'V': ["<div class=\"videoWrapper\"><iframe src=\"", "\" autoplay=\"0\" frameborder=\"0\" allowfullscreen></iframe></div>"],
